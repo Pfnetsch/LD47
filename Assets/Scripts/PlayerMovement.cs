@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bolt;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,11 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed = 0.5F;
     public bool isJumpingAllowed = false;
 
+    public float moveIncrDelayInSec = 2.0F;
+    private int _movementDirection = 0; // 0 standing still, 1 is left, 2 is right
+    private float _movementTimer = 0.0F;
+    private int _incCounter = 1;
+
     private Rigidbody2D _playerBody;
 
     // Start is called before the first frame update
@@ -27,6 +33,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            if (_movementDirection != 1)
+            {
+                _movementTimer = 0.0f; // Timer Reset
+                _movementDirection = 1;
+            }
+
             if (player.transform.position.x > leftBorder.position.x && (player.transform.position.y > leftBorder.position.y || player.transform.position.x > 0F))
             {
                 // rotate player
@@ -38,8 +50,20 @@ public class PlayerMovement : MonoBehaviour
                 planet.RotateAround(planet.position, Vector3.forward, movementSpeed * -1F);
             }
         }
+        else if (_movementDirection == 1)   // Left Key Up
+        {
+            _movementDirection = 0;
+            _movementTimer = 0.0f; // Timer Reset
+        }
+
         if (Input.GetKey(KeyCode.RightArrow))
         {
+            if (_movementDirection != 2)
+            {
+                _movementTimer = 0.0f; // Timer Reset
+                _movementDirection = 2;
+            }
+
             if (player.transform.position.x < rightBorder.position.x && (player.transform.position.y > rightBorder.position.y || player.transform.position.x < 0F))
             {
                 // rotate player
@@ -51,10 +75,25 @@ public class PlayerMovement : MonoBehaviour
                 planet.RotateAround(planet.position, Vector3.forward, movementSpeed);
             }
         }
+        else if (_movementDirection == 2)
+        {
+            _movementDirection = 0;
+            _movementTimer = 0.0f; // Timer Reset
+        }
 
         if (isJumpingAllowed && Input.GetKeyDown(KeyCode.Space) && player.GetComponent<Player>().isGrounded)
         {
             _playerBody.AddRelativeForce(new Vector2(0.0F, 5.0F), ForceMode2D.Impulse);
         }
+
+        _movementTimer += Time.deltaTime;
+
+        if (_movementDirection != 0 && moveIncrDelayInSec != 0 && _movementTimer > moveIncrDelayInSec)
+        {
+            movementSpeed += movementSpeed * _incCounter;
+            _movementTimer = 0.0F;
+        }
+
+
     }
 }
