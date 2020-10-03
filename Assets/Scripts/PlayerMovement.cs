@@ -5,18 +5,21 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject player;
+
     public Transform planet;
-    public Transform player;
     public Transform leftBorder;
     public Transform rightBorder;
-    public float movementSpeed = 0.5F;
 
-    private bool isGrounded = false;
-    
+    public float movementSpeed = 0.5F;
+    public bool isJumpingAllowed = false;
+
+    private Rigidbody2D _playerBody;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        _playerBody = player.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -24,10 +27,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            if (player.position.x > leftBorder.position.x && (player.position.y > leftBorder.position.y || player.position.x > 0F))
+            if (player.transform.position.x > leftBorder.position.x && (player.transform.position.y > leftBorder.position.y || player.transform.position.x > 0F))
             {
                 // rotate player
-                player.RotateAround(planet.position, Vector3.forward, movementSpeed);
+                player.transform.RotateAround(planet.position, Vector3.forward, movementSpeed);
             }
             else
             {
@@ -37,10 +40,10 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            if (player.position.x < rightBorder.position.x && (player.position.y > rightBorder.position.y || player.position.x < 0F))
+            if (player.transform.position.x < rightBorder.position.x && (player.transform.position.y > rightBorder.position.y || player.transform.position.x < 0F))
             {
                 // rotate player
-                player.RotateAround(planet.position, Vector3.forward, movementSpeed * -1F);
+                player.transform.RotateAround(planet.position, Vector3.forward, movementSpeed * -1F);
             }
             else
             {
@@ -49,25 +52,9 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (isJumpingAllowed && Input.GetKeyDown(KeyCode.Space) && player.GetComponent<Player>().isGrounded)
         {
-            //Jump
-        }
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.collider.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        if (other.collider.CompareTag("Ground"))
-        {
-            isGrounded = true;
+            _playerBody.AddRelativeForce(new Vector2(0.0F, 5.0F), ForceMode2D.Impulse);
         }
     }
 }
