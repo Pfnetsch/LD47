@@ -1,31 +1,16 @@
 fileFormatVersion: 2
-guid: 3c3fcfd74dc1a6547b58cb7361647e97
+guid: 25501f4c898a10748bcf68cc29b4bf93
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5425050101103794934
-    second: cat_move_left_red_0
+      213: 540765271548338817
+    second: cat_jump_redt_0
   - first:
-      213: -519940169508212445
-    second: cat_move_left_red_1
+      213: -5870846278967515117
+    second: cat_jump_redt_1
   - first:
-      213: -5868351556144562001
-    second: cat_move_left_red_2
-  - first:
-      213: 9091819147787658901
-    second: cat_move_left_red_3
-  - first:
-      213: -2026369978966064942
-    second: cat_move_left_red_0
-  - first:
-      213: 7195577177006874120
-    second: cat_move_left_red_1
-  - first:
-      213: -266291707317770833
-    second: cat_move_left_red_2
-  - first:
-      213: -2351823633941301919
-    second: cat_move_left_red_3
+      213: 3216328276882034117
+    second: cat_jump_redt_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -113,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cat_move_left_red_0
+      name: cat_jump_redt_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 23
-        height: 34
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,20 +112,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d046348d33e0e3e0800000000000000
-      internalID: -2026369978966064942
+      spriteID: 182a18d362f218700800000000000000
+      internalID: 540765271548338817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_move_left_red_1
+      name: cat_jump_redt_1
       rect:
         serializedVersion: 2
         x: 24
         y: 0
         width: 23
-        height: 34
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80e17659153dbd360800000000000000
-      internalID: 7195577177006874120
+      spriteID: 318a7331a60968ea0800000000000000
+      internalID: -5870846278967515117
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_move_left_red_2
+      name: cat_jump_redt_2
       rect:
         serializedVersion: 2
         x: 48
         y: 0
         width: 23
-        height: 34
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,29 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa521b26a11fd4cf0800000000000000
-      internalID: -266291707317770833
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cat_move_left_red_3
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 0
-        width: 23
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1657f8c8dd4ac5fd0800000000000000
-      internalID: -2351823633941301919
+      spriteID: 5cd0998e681b2ac20800000000000000
+      internalID: 3216328276882034117
       vertices: []
       indices: 
       edges: []

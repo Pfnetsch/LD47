@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 3d5792e63cafdb146b4d89302cc296e0
+guid: 8d9bc5094339adc4fb69b724fa4aecc7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5604894924327801113
-    second: cat_move_left_blue-Sheet_0
+      213: 488503130879178610
+    second: cat_jump_yellow_0
   - first:
-      213: -1223818793874664368
-    second: cat_move_left_blue-Sheet_1
+      213: 7803554750844496562
+    second: cat_jump_yellow_1
   - first:
-      213: -6238057145761708631
-    second: cat_move_left_blue-Sheet_2
-  - first:
-      213: 3451246927826648625
-    second: cat_move_left_blue-Sheet_3
+      213: -5024605394319236673
+    second: cat_jump_yellow_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -44,7 +41,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -101,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cat_move_left_blue-Sheet_0
+      name: cat_jump_yellow_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 23
-        height: 34
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,20 +112,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ee2d0823c96732b0800000000000000
-      internalID: -5604894924327801113
+      spriteID: 27738b3620387c600800000000000000
+      internalID: 488503130879178610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_move_left_blue-Sheet_1
+      name: cat_jump_yellow_1
       rect:
         serializedVersion: 2
         x: 24
         y: 0
         width: 23
-        height: 34
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05457a18a4f140fe0800000000000000
-      internalID: -1223818793874664368
+      spriteID: 2bae56d63bbcb4c60800000000000000
+      internalID: 7803554750844496562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_move_left_blue-Sheet_2
+      name: cat_jump_yellow_2
       rect:
         serializedVersion: 2
         x: 48
         y: 0
         width: 23
-        height: 34
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,29 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a5494a9318fd69a0800000000000000
-      internalID: -6238057145761708631
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cat_move_left_blue-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 0
-        width: 23
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 13ef34d9bca45ef20800000000000000
-      internalID: 3451246927826648625
+      spriteID: fb1271fe304054ab0800000000000000
+      internalID: -5024605394319236673
       vertices: []
       indices: 
       edges: []

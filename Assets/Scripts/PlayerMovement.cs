@@ -27,10 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private float _movementTimer = 0.0F;
     private int _movementIncrementCounter = 1;
 
-    // Direction to the next Planet
 
-
-    // Jumping
     private Rigidbody2D _playerBody;
 
     // Start is called before the first frame update
