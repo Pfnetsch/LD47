@@ -43,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         // move left
         if (Input.GetKey(KeyCode.LeftArrow) && player.GetComponent<Player>().isGrounded)
         {
@@ -52,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
                 ResetMovementSpeed(1);
             }
 
-            if (player.transform.position.x > leftBorder.position.x && (player.transform.position.y > leftBorder.position.y || player.transform.localPosition.x > 0F))
+            if (player.transform.position.x > leftBorder.position.x && (player.transform.position.y > leftBorder.position.y || player.transform.localPosition.x > 0F) && player.GetComponent<Player>().isGrounded)
             {
                 // rotate player
                 player.transform.RotateAround(currentPlanet.transform.position, Vector3.forward, _movementSpeed);
@@ -67,8 +66,7 @@ public class PlayerMovement : MonoBehaviour
         {
             ResetMovementSpeed(0);
         }
-        
-        // move right
+
         if (Input.GetKey(KeyCode.RightArrow) && player.GetComponent<Player>().isGrounded)
         {
             if (_movementDirection != 2)
@@ -76,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
                 ResetMovementSpeed(2);
             }
 
-            if (player.transform.position.x < rightBorder.position.x && (player.transform.position.y > rightBorder.position.y || player.transform.localPosition.x < 0F))
+            if (player.transform.position.x < rightBorder.position.x && (player.transform.position.y > rightBorder.position.y || player.transform.localPosition.x < 0F) && player.GetComponent<Player>().isGrounded)
             {
                 // rotate player
                 player.transform.RotateAround(currentPlanet.transform.position, Vector3.forward, _movementSpeed * -1F);
@@ -96,7 +94,10 @@ public class PlayerMovement : MonoBehaviour
         {
             currentPlanet.GetComponent<PlayerPlanetMovement>().Jump();
         }
+    }
 
+    private void FixedUpdate()
+    {
         _movementTimer += Time.deltaTime;
 
         if (_movementDirection != 0 && moveIncrDelayInSec != 0 && _movementTimer > moveIncrDelayInSec)
@@ -105,8 +106,6 @@ public class PlayerMovement : MonoBehaviour
             _playerBody.gravityScale -= 0.01F * _movementIncrementCounter * _movementIncrementCounter;
             _movementTimer = 0.0F;
             _movementIncrementCounter++;
-
-            UnityEngine.Debug.Log("GravityScale: " + _playerBody.gravityScale);
         }
     }
 
