@@ -8,18 +8,27 @@ public class PlayerMovement : MonoBehaviour
 {
     public GameObject player;
 
-    public Transform planet;
+    public Transform currentPlanet;
+    public Transform nextPlanet;
+    public Transform allPlanets;
+
     public Transform leftBorder;
     public Transform rightBorder;
 
     public float movementSpeed = 0.5F;
     public bool isJumpingAllowed = false;
 
+
+    // Increasing Speed - Mercury
     public float moveIncrDelayInSec = 2.0F;
     private int _movementDirection = 0; // 0 standing still, 1 is left, 2 is right
     private float _movementTimer = 0.0F;
     private int _incCounter = 1;
 
+    // Direction to the next Planet
+
+
+    // Jumping
     private Rigidbody2D _playerBody;
 
     // Start is called before the first frame update
@@ -42,12 +51,12 @@ public class PlayerMovement : MonoBehaviour
             if (player.transform.position.x > leftBorder.position.x && (player.transform.position.y > leftBorder.position.y || player.transform.position.x > 0F))
             {
                 // rotate player
-                player.transform.RotateAround(planet.position, Vector3.forward, movementSpeed);
+                player.transform.RotateAround(currentPlanet.position, Vector3.forward, movementSpeed);
             }
             else
             {
                 // rotate planet
-                planet.RotateAround(planet.position, Vector3.forward, movementSpeed * -1F);
+                allPlanets.RotateAround(currentPlanet.position, Vector3.forward, movementSpeed * -1F);
             }
         }
         else if (_movementDirection == 1)   // Left Key Up
@@ -67,12 +76,12 @@ public class PlayerMovement : MonoBehaviour
             if (player.transform.position.x < rightBorder.position.x && (player.transform.position.y > rightBorder.position.y || player.transform.position.x < 0F))
             {
                 // rotate player
-                player.transform.RotateAround(planet.position, Vector3.forward, movementSpeed * -1F);
+                player.transform.RotateAround(currentPlanet.position, Vector3.forward, movementSpeed * -1F);
             }
             else
             {
                 // rotate planet
-                planet.RotateAround(planet.position, Vector3.forward, movementSpeed);
+                allPlanets.RotateAround(currentPlanet.position, Vector3.forward, movementSpeed);
             }
         }
         else if (_movementDirection == 2)
@@ -94,6 +103,9 @@ public class PlayerMovement : MonoBehaviour
             _movementTimer = 0.0F;
         }
 
+        if (movementSpeed > 100)
+        {
 
+        }
     }
 }
