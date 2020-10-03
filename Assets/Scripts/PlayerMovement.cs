@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public GameObject player;
 
-    public Transform currentPlanet;
+    public GameObject currentPlanet;
     public Transform nextPlanet;
     public Transform allPlanets;
 
@@ -43,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        // move left
         if (Input.GetKey(KeyCode.LeftArrow) && player.GetComponent<Player>().isGrounded)
         {
             if (_movementDirection != 1)
@@ -53,19 +55,20 @@ public class PlayerMovement : MonoBehaviour
             if (player.transform.position.x > leftBorder.position.x && (player.transform.position.y > leftBorder.position.y || player.transform.localPosition.x > 0F))
             {
                 // rotate player
-                player.transform.RotateAround(currentPlanet.position, Vector3.forward, _movementSpeed);
+                player.transform.RotateAround(currentPlanet.transform.position, Vector3.forward, _movementSpeed);
             }
             else
             {
                 // rotate planet
-                allPlanets.RotateAround(currentPlanet.position, Vector3.forward, _movementSpeed * -1F);
+                allPlanets.RotateAround(currentPlanet.transform.position, Vector3.forward, _movementSpeed * -1F);
             }
         }
         else if (_movementDirection == 1)   // Left Key Up
         {
             ResetMovementSpeed(0);
         }
-
+        
+        // move right
         if (Input.GetKey(KeyCode.RightArrow) && player.GetComponent<Player>().isGrounded)
         {
             if (_movementDirection != 2)
@@ -76,12 +79,12 @@ public class PlayerMovement : MonoBehaviour
             if (player.transform.position.x < rightBorder.position.x && (player.transform.position.y > rightBorder.position.y || player.transform.localPosition.x < 0F))
             {
                 // rotate player
-                player.transform.RotateAround(currentPlanet.position, Vector3.forward, _movementSpeed * -1F);
+                player.transform.RotateAround(currentPlanet.transform.position, Vector3.forward, _movementSpeed * -1F);
             }
             else
             {
                 // rotate planet
-                allPlanets.RotateAround(currentPlanet.position, Vector3.forward, _movementSpeed);
+                allPlanets.RotateAround(currentPlanet.transform.position, Vector3.forward, _movementSpeed);
             }
         }
         else if (_movementDirection == 2)
@@ -89,9 +92,9 @@ public class PlayerMovement : MonoBehaviour
             ResetMovementSpeed(0);
         }
 
-        if (isJumpingAllowed && Input.GetKeyDown(KeyCode.Space) && player.GetComponent<Player>().isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && player.GetComponent<Player>().isGrounded)
         {
-            _playerBody.AddRelativeForce(new Vector2(0.0F, 5.0F), ForceMode2D.Impulse);
+            currentPlanet.GetComponent<PlayerPlanetMovement>().Jump();
         }
 
         _movementTimer += Time.deltaTime;
