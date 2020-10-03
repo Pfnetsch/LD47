@@ -26,16 +26,13 @@ public class GravityControl : MonoBehaviour
         Vector3 playerPos = gameObject.transform.position;
 
         Vector3 direction = (planetPos - playerPos).normalized;
-
         Vector2 newGravityDirection = new Vector2(direction.x, direction.y);
 
-        //gameObject.transform.LookAt(Planet, Quaternion.AngleAxis(-90, Vector3.up) * direction);
-
-        //gameObject.transform.RotateAround(planetPos, Vector3.forward, 0.01f);
+        var charRotation = Quaternion.LookRotation(direction, Vector3.forward);
+        charRotation.x = 0f;
+        charRotation.y = 0f;
+        gameObject.transform.rotation = charRotation;
 
         Physics2D.gravity = newGravityDirection * 9.8F;
-
-        //Physics2D.gravity = new Vector2()
-        UnityEngine.Debug.Log("New gravity direction: " + newGravityDirection * 9.8F);
     }
 }
