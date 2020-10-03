@@ -51,16 +51,8 @@ public class PlayerMovement : MonoBehaviour
                 ResetMovementSpeed(1);
             }
 
-            if (player.transform.position.x > leftBorder.position.x && (player.transform.position.y > leftBorder.position.y || player.transform.localPosition.x > 0F) && player.GetComponent<Player>().isGrounded)
-            {
-                // rotate player
-                player.transform.RotateAround(currentPlanet.transform.position, Vector3.forward, _movementSpeed);
-            }
-            else
-            {
-                // rotate planet
-                allPlanets.RotateAround(currentPlanet.transform.position, Vector3.forward, _movementSpeed * -1F);
-            }
+            // Rotate Planet
+            allPlanets.RotateAround(currentPlanet.transform.position, Vector3.forward, _movementSpeed * -1F);
         }
         else if (_movementDirection == 1)   // Left Key Up
         {
@@ -74,16 +66,8 @@ public class PlayerMovement : MonoBehaviour
                 ResetMovementSpeed(2);
             }
 
-            if (player.transform.position.x < rightBorder.position.x && (player.transform.position.y > rightBorder.position.y || player.transform.localPosition.x < 0F) && player.GetComponent<Player>().isGrounded)
-            {
-                // rotate player
-                player.transform.RotateAround(currentPlanet.transform.position, Vector3.forward, _movementSpeed * -1F);
-            }
-            else
-            {
-                // rotate planet
-                allPlanets.RotateAround(currentPlanet.transform.position, Vector3.forward, _movementSpeed);
-            }
+            // Rotate Planet
+            allPlanets.RotateAround(currentPlanet.transform.position, Vector3.forward, _movementSpeed);
         }
         else if (_movementDirection == 2)
         {

@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 15156533}
   m_Layer: 0
   m_Name: Venus
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -480,45 +480,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 200, y: 7, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1912027926}
-  - {fileID: 1777617525}
-  - {fileID: 695361034}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &695361033
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 695361034}
-  m_Layer: 0
-  m_Name: RightBorder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &695361034
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695361033}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: -2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
-  m_Father: {fileID: 519420032}
-  m_RootOrder: 2
+  m_Father: {fileID: 1912027926}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &743610817
 GameObject:
@@ -664,7 +631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b317158599686646ad001f6d23d33f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 743610820}
+  Planet: {fileID: 15156531}
   Player: {fileID: 1912027926}
 --- !u!4 &748552350
 Transform:
@@ -693,11 +660,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1912027923}
-  currentPlanet: {fileID: 743610817}
+  currentPlanet: {fileID: 15156530}
   nextPlanet: {fileID: 15156531}
   allPlanets: {fileID: 2113735721}
-  leftBorder: {fileID: 1777617525}
-  rightBorder: {fileID: 695361034}
+  leftBorder: {fileID: 0}
+  rightBorder: {fileID: 0}
   initialMovementSpeed: 0.2
   isJumpingAllowed: 0
   moveIncrDelayInSec: 2
@@ -1206,36 +1173,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1777617524
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1777617525}
-  m_Layer: 0
-  m_Name: LeftBorder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1777617525
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777617524}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: -2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 519420032}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1843339029
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,7 +1305,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.15, y: 0.22}
+  m_Size: {x: 0.2, y: 0.3}
   m_Direction: 0
 --- !u!4 &1912027926
 Transform:
@@ -1378,11 +1315,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912027923}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 400, y: 15, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 1976451620}
-  m_Father: {fileID: 519420032}
+  - {fileID: 519420032}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1912027927
@@ -1432,7 +1370,7 @@ GameObject:
   - component: {fileID: 1932132690}
   m_Layer: 0
   m_Name: Labyrinth
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2279,8 +2217,8 @@ PolygonCollider2D:
       - {x: 1.64, y: 2.3799999}
       - {x: 1.8499999, y: 2.23}
       - {x: 1.92, y: 2.1699998}
-      - {x: 2.03, y: 2.06}
-      - {x: 1.75, y: 1.78}
+      - {x: 1.8863766, y: 2.141393}
+      - {x: 1.668602, y: 1.9212408}
       - {x: 1.5799999, y: 1.9599999}
       - {x: 1.4599999, y: 2.04}
       - {x: 1.1899999, y: 2.21}
@@ -2591,8 +2529,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -279287661
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 1762196779577055134, guid: 783287509e840594fa931dc8335947a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
