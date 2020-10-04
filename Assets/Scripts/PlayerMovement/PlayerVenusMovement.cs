@@ -12,7 +12,6 @@ public class PlayerVenusMovement : MonoBehaviour, IPlayerPlanetMovement
         rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
     }
 
-    public void PlayerUpdate(Rigidbody2D _playerBody)
     private int _movingToNextPlanet = 0;
 
     SpriteRenderer _spriteRenderer;
