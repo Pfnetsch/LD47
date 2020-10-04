@@ -6,7 +6,7 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
 {
     private float _movementSpeed = 0.2F;
 
-    public void PlayerUpdate(Rigidbody2D _playerBody)
+    public void PlayerUpdate(Rigidbody2D playerBody)
     {
         Debug.Log("Mars Movement");
         // move left
@@ -20,9 +20,9 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
             gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed);
         }
         
-        if (Input.GetKeyDown(KeyCode.Space) && _playerBody.GetComponent<Player>().isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && playerBody.GetComponent<Player>().isGrounded)
         {
-            _playerBody.AddRelativeForce(new Vector2(0.0F, 5.0F), ForceMode2D.Impulse);
+            playerBody.AddRelativeForce(new Vector2(0.0F, 5.0F), ForceMode2D.Impulse);
         }
     }
 }
