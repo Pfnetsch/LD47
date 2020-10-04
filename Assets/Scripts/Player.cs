@@ -5,9 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public bool isGrounded { get { return _isGrounded; } }
-    public bool isUnderWateer { get { return _isUnderWater; } }
+    public bool isUnderWater { get { return _isUnderWater; } }
 
-    public List<AnimatorOverrideController> animationControllers;
+    public List<AnimatorOverrideController> animationControllersMoveJump;
+    public UnityEditor.Animations.AnimatorController animationControllerSwim;
 
     //public List<Sprite>
 
@@ -20,7 +21,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         _animator = GetComponentInChildren<Animator>();
-        _animator.runtimeAnimatorController = animationControllers[GlobalInformation.CharacterSkinIndex];
+        _animator.runtimeAnimatorController = animationControllersMoveJump[GlobalInformation.CharacterSkinIndex];
     }
 
     // Update is called once per frame
@@ -31,21 +32,24 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (!_isUnderWater)
         {
-            _animator.SetInteger("Index", 1);
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            _animator.SetInteger("Index", 2);
-        }
-        else if (Input.GetKey(KeyCode.Space))
-        {
-            _animator.SetInteger("Index", 3);
-        }
-        else
-        {
-            _animator.SetInteger("Index", 0);
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                _animator.SetInteger("Index", 1);
+            }
+            else if (Input.GetKey(KeyCode.RightArrow))
+            {
+                _animator.SetInteger("Index", 2);
+            }
+            else if (Input.GetKey(KeyCode.Space))
+            {
+                _animator.SetInteger("Index", 3);
+            }
+            else
+            {
+                _animator.SetInteger("Index", 0);
+            }
         }
     }
 
@@ -71,6 +75,8 @@ public class Player : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().gravityScale = 0;
             _isUnderWater = true;
+            _animator.runtimeAnimatorController = animationControllerSwim;
+            _animator.SetInteger("CharIndex", GlobalInformation.CharacterSkinIndex);
         }
     }
 
@@ -80,6 +86,7 @@ public class Player : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().gravityScale = 1;
             _isUnderWater = false;
+            _animator.runtimeAnimatorController = animationControllersMoveJump[GlobalInformation.CharacterSkinIndex];
         }
     }
 }

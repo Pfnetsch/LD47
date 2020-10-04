@@ -11,7 +11,7 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
     {
         Debug.Log("Earth Movement");
 
-        if (playerBody.GetComponent<Player>().isUnderWateer)
+        if (playerBody.GetComponent<Player>().isUnderWater)
         {
             if (Input.GetKey(KeyCode.LeftArrow))
             {
