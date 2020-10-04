@@ -108,7 +108,7 @@ public class PlayerMercuryMovement : MonoBehaviour, IPlayerPlanetMovement
             // lift off
             movingToNextPlanet = true;
             GlobalInformation.currentScene++;
-            SceneManager.LoadScene("Transition");
+            SceneManager.LoadScene("Transition", LoadSceneMode.Single);
         }
         
     }
