@@ -283,12 +283,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511506438}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b317158599686646ad001f6d23d33f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planet: {fileID: 0}
+  Planet: {fileID: 1918962954}
   Player: {fileID: 1779398385}
 --- !u!114 &511506441
 MonoBehaviour:
@@ -540,6 +540,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1530647858}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1561930402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6906393811740659643, guid: 44d5aefcac1844747a60801eb650ab4f, type: 3}
+  m_PrefabInstance: {fileID: 6906393813349061868}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1561930405
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561930402}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3.75
 --- !u!1 &1779398384
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,6 +795,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VenusPlanet
       objectReference: {fileID: 0}
+    - target: {fileID: 1838723149241936811, guid: e774d76fdd885094bbb4a2fe36d635db, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e774d76fdd885094bbb4a2fe36d635db, type: 3}
 --- !u!1001 &2094540316146198206
@@ -843,6 +868,10 @@ PrefabInstance:
     - target: {fileID: 2902168135679804902, guid: 8f63ad18e1232d44c85375f1e433fbc1, type: 3}
       propertyPath: m_Name
       value: MercuryPlanet
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902168135679804902, guid: 8f63ad18e1232d44c85375f1e433fbc1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2902168135679804903, guid: 8f63ad18e1232d44c85375f1e433fbc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1011,6 +1040,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2113735721}
     m_Modifications:
+    - target: {fileID: 6906393811740659643, guid: 44d5aefcac1844747a60801eb650ab4f, type: 3}
+      propertyPath: m_TagString
+      value: WaterSurface
+      objectReference: {fileID: 0}
     - target: {fileID: 6906393811975494117, guid: 44d5aefcac1844747a60801eb650ab4f, type: 3}
       propertyPath: m_Name
       value: EarthPlanet

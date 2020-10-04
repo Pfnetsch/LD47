@@ -5,12 +5,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public bool isGrounded { get { return _isGrounded; } }
+    public bool isUnderWateer { get { return _isUnderWater; } }
 
     public List<AnimatorOverrideController> animationControllers;
 
     //public List<Sprite>
 
     private bool _isGrounded = false;
+    private bool _isUnderWater = false;
 
     private Animator _animator;
 
@@ -60,6 +62,24 @@ public class Player : MonoBehaviour
         if (other.collider.CompareTag("Ground"))
         {
             _isGrounded = false;
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("WaterSurface"))
+        {
+            GetComponent<Rigidbody2D>().gravityScale = 0;
+            _isUnderWater = true;
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("WaterSurface"))
+        {
+            GetComponent<Rigidbody2D>().gravityScale = 1;
+            _isUnderWater = false;
         }
     }
 }
