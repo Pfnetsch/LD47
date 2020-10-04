@@ -70,8 +70,9 @@ public class Player : MonoBehaviour
             laserTrans.gameObject.SetActive(true);
 
             Transform zopfnTrans = laserTrans.Find("Zopfn");
+            Transform zopfnTarget = laserTrans.Find("ZopfnTarget");
 
-            zopfnTrans.position = Vector3.MoveTowards(zopfnTrans.position, transform.Find("ZopfnTarget").position, 0.2F * Time.deltaTime);
+            zopfnTrans.position = Vector3.MoveTowards(zopfnTrans.position, zopfnTarget.position, 7F * Time.deltaTime);
         }
     }
 
