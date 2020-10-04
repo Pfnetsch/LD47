@@ -16,16 +16,16 @@ TextureImporter:
     second: cat_move_mars_3
   - first:
       213: -9052611776043747441
-    second: cat_move_mars_4
+    second: cat_move_mars_3
   - first:
       213: -5518406283223862954
-    second: cat_move_mars_5
+    second: cat_move_mars_3
   - first:
       213: 6815661329118959401
-    second: cat_move_mars_6
+    second: cat_move_mars_3
   - first:
       213: 7049232709710804537
-    second: cat_move_mars_7
+    second: cat_move_mars_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -176,7 +176,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_move_mars_3
+      name: cat_move_mars_4
       rect:
         serializedVersion: 2
         x: 9
@@ -197,7 +197,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_move_mars_4
+      name: cat_move_mars_5
       rect:
         serializedVersion: 2
         x: 39
@@ -218,7 +218,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_move_mars_5
+      name: cat_move_mars_6
       rect:
         serializedVersion: 2
         x: 65
@@ -239,7 +239,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_move_mars_6
+      name: cat_move_mars_7
       rect:
         serializedVersion: 2
         x: 96
@@ -260,7 +260,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_move_mars_7
+      name: cat_move_mars_3
       rect:
         serializedVersion: 2
         x: 117
