@@ -25,39 +25,39 @@ public class PlanetMovement : MonoBehaviour
 
             switch (planet.gameObject.name)
             {
-                case "Mercury":
+                case "MercuryPlanet":
                     rotationSpeed = 1F;
                     break;
 
-                case "Venus":
+                case "VenusPlanet":
                     rotationSpeed = 0.39F;
                     break;
 
-                case "Earth":
+                case "EarthPlanet":
                     rotationSpeed = 0.24F;
                     break;
 
-                case "Mars":
+                case "MarsPlanet":
                     rotationSpeed = 0.13F;
                     break;
 
-                case "Jupiter":
+                case "JupiterPlanet":
                     rotationSpeed = 0.02F;
                     break;
 
-                case "Saturn":
+                case "SaturnPlanet":
                     rotationSpeed = 0.009F;
                     break;
 
-                case "Uranus":
+                case "UranusPlanet":
                     rotationSpeed = 0.003F;
                     break;
 
-                case "Neptune":
+                case "NeptunePlanet":
                     rotationSpeed = 0.0015F;
                     break;
 
-                case "Pluto":
+                case "PlutoPlanet":
                     rotationSpeed = 0.0001F;
                     break;
 
