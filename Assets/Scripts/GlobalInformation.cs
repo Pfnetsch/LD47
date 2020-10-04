@@ -12,6 +12,9 @@ public static class GlobalInformation
     public static int currentScene = 6;
     public static int saturnScore = 0;
 
+    // Venus Transition
+    public static bool fasterTransition = false;
+
     /// <summary>
     /// 0 is RED, 1 is BLUE, 2 is GREEN, 3 is YELLOW
     /// </summary>

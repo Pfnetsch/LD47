@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public bool isGrounded { get { return _isGrounded; } }
     public bool isUnderWater { get { return _isUnderWater; } }
 
+    public bool isButtonPressed { get { return _isButtonPressed; } }
+
     public List<AnimatorOverrideController> animationControllersMoveJump;
     public UnityEditor.Animations.AnimatorController animationControllerSwim;
 
@@ -15,6 +17,7 @@ public class Player : MonoBehaviour
 
     private bool _isGrounded = false;
     private bool _isUnderWater = false;
+    private bool _isButtonPressed = false;
 
     private Animator _animator;
 
@@ -89,6 +92,10 @@ public class Player : MonoBehaviour
             _animator.runtimeAnimatorController = animationControllerSwim;
             _animator.SetInteger("CharIndex", GlobalInformation.CharacterSkinIndex);
         }
+        if (collision.CompareTag("Button"))
+        {
+            _isButtonPressed = true;
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
@@ -98,6 +105,10 @@ public class Player : MonoBehaviour
             GetComponent<Rigidbody2D>().gravityScale = 1;
             _isUnderWater = false;
             _animator.runtimeAnimatorController = animationControllersMoveJump[GlobalInformation.CharacterSkinIndex];
+        }
+        if (collision.CompareTag("Button"))
+        {
+            _isButtonPressed = false;
         }
     }
 }
