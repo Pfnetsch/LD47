@@ -9,7 +9,7 @@ public static class GlobalInformation
     
     
     // Global information sharing
-    public static int currentScene = 3;
+    public static int currentScene = 4;
 
     /// <summary>
     /// 0 is RED, 1 is BLUE, 2 is GREEN, 3 is YELLOW
