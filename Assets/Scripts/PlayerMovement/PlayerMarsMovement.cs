@@ -42,11 +42,17 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
         {
             _dustRenderer = playerBody.transform.Find("Sprite").GetComponent<SpriteRenderer>();
             _dustTransform = playerBody.transform.Find("DustAnimation");
+            _dustTransform.gameObject.SetActive(true);
+        }
+        else
+        {
+            _dustTransform.gameObject.SetActive(false);
         }
              
         // move and degrade
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            _dustTransform.GetComponent<Animator>().SetInteger("Index", 1);
             gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed * -1F);
 
             _marsSpriteTransform.localScale -= scaleChange;
@@ -54,6 +60,7 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
+            _dustTransform.GetComponent<Animator>().SetInteger("Index", 2);
             gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed);
 
             _marsSpriteTransform.localScale -= scaleChange;
