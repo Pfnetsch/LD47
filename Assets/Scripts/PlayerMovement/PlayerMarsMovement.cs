@@ -29,6 +29,9 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
     {
         rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
         rootGameObject.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
+        _dustRenderer = rootGameObject.transform.Find("Sprite").GetComponent<SpriteRenderer>();
+        _dustTransform = rootGameObject.transform.Find("DustAnimation");
+
     }
 
     public void PlayerUpdate(Rigidbody2D playerBody)
@@ -37,33 +40,27 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
 
         Vector3 scaleChange = new Vector3(_initialSpriteSizeStep / _marsSpriteTransform.localScale.x, _initialSpriteSizeStep / _marsSpriteTransform.localScale.y, 0) * Time.deltaTime;
 
-        // dust generate
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
-        {
-            _dustRenderer = playerBody.transform.Find("Sprite").GetComponent<SpriteRenderer>();
-            _dustTransform = playerBody.transform.Find("DustAnimation");
-            _dustTransform.gameObject.SetActive(true);
-        }
-        else
-        {
-            _dustTransform.gameObject.SetActive(false);
-        }
-             
         // move and degrade
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            _dustTransform.gameObject.SetActive(true);
             _dustTransform.GetComponent<Animator>().SetInteger("Index", 1);
             gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed * -1F);
 
             _marsSpriteTransform.localScale -= scaleChange;
         }
-
-        if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
+            _dustTransform.gameObject.SetActive(true);
             _dustTransform.GetComponent<Animator>().SetInteger("Index", 2);
             gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed);
 
             _marsSpriteTransform.localScale -= scaleChange;
+        }
+        else
+        {
+            _dustTransform.gameObject.SetActive(false);
+            _dustTransform.GetComponent<Animator>().SetInteger("Index", 0);
         }
 
         if (_marsSpriteTransform.localScale.x < 0.5F)
