@@ -25,6 +25,7 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
     public void PlayerSetup(GameObject rootGameObject)
     {
         rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
+        rootGameObject.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
     }
 
     public void PlayerUpdate(Rigidbody2D playerBody)

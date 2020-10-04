@@ -13,7 +13,9 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
 
     public void PlayerSetup(GameObject rootGameObject)
     {
+        //setup
         rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
+        rootGameObject.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
 
         _spriteRenderer = rootGameObject.transform.Find("Sprite").GetComponent<SpriteRenderer>();
         _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 0F);   // Invisible at the beginning
