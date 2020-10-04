@@ -82,11 +82,6 @@ public class Player : MonoBehaviour
         {
             _isGrounded = true;
         }
-        else if (other.collider.CompareTag("Collectible"))
-        {
-            Destroy(other.gameObject);
-            GlobalInformation.saturnScore++;
-        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
@@ -109,6 +104,11 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Button"))
         {
             _isButtonPressed = true;
+        }
+        else if (collision.CompareTag("Collectible"))
+        {
+            Destroy(collision.gameObject);
+            GlobalInformation.currentCollectibles++;
         }
     }
 

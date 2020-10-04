@@ -472,7 +472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1838723149241936811, guid: e774d76fdd885094bbb4a2fe36d635db, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1838723149664699141, guid: e774d76fdd885094bbb4a2fe36d635db, type: 3}
       propertyPath: m_IsActive
@@ -807,10 +807,6 @@ PrefabInstance:
     - target: {fileID: 6906393811975494117, guid: 44d5aefcac1844747a60801eb650ab4f, type: 3}
       propertyPath: m_Name
       value: EarthPlanet
-      objectReference: {fileID: 0}
-    - target: {fileID: 6906393811975494117, guid: 44d5aefcac1844747a60801eb650ab4f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6906393811975494118, guid: 44d5aefcac1844747a60801eb650ab4f, type: 3}
       propertyPath: m_LocalPosition.x

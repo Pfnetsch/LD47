@@ -14,6 +14,8 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
 
     public void PlayerSetup(GameObject rootGameObject)
     {
+        GlobalInformation.currentCollectibles = 0;
+
         Variables.Application.Set("laserTransition", false);
 
         //setup
@@ -43,12 +45,13 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
             float animationPercentage = _teleportTransform.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime;
             if (animationPercentage < 1)
             {
-                _spriteRenderer.color += new Color(0, 0, 0, 0.2F * Time.deltaTime);
+                _spriteRenderer.color += new Color(0, 0, 0, 0.3F * Time.deltaTime);
             }
             else
             {
                 _teleportComplete = true;
                 _teleportTransform.gameObject.SetActive(false);
+                _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 1F);   // Invisible at the beginning
             }
         }
         else
@@ -88,6 +91,12 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
                 {
                     playerBody.AddRelativeForce(new Vector2(0.0F, 5.0F), ForceMode2D.Impulse);
                 }
+            }
+
+            if (GlobalInformation.currentCollectibles == 3)
+            {
+                // && if near Baikonur
+                // Show Info for User once
             }
         }
     }

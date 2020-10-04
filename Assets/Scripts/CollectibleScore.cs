@@ -10,15 +10,15 @@ public class CollectibleScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GlobalInformation.saturnScore = 0;
+        GlobalInformation.currentCollectibles = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        gameObject.GetComponent<TextMeshProUGUI>().text = "Score: " + GlobalInformation.saturnScore;
+        gameObject.GetComponent<TextMeshProUGUI>().text = "Score: " + GlobalInformation.currentCollectibles;
 
-        if (GlobalInformation.saturnScore >= MAX_SCORE)
+        if (GlobalInformation.currentCollectibles >= MAX_SCORE)
         {
             gameObject.GetComponent<TextMeshProUGUI>().text = "U win boiyo";
         }
