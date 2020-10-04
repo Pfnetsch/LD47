@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
 {
     private float _movementSpeed = 0.2F;
-    private float _save_initial;
 
     private CircleCollider2D _colliderSurface;
     private Transform _marsSpriteTransform;
@@ -19,7 +18,6 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
         _marsSpriteTransform = this.transform.Find("MarsSprite").transform;
 
         _initialSpriteSizeStep = _marsSpriteTransform.localScale.x / 10;
-        _save_initial = _initialSpriteSizeStep;
     }
 
     public void PlayerSetup(GameObject rootGameObject)
@@ -55,7 +53,7 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
 
         if (Input.GetKeyDown(KeyCode.Space) && playerBody.GetComponent<Player>().isGrounded)
         {
-           playerBody.AddRelativeForce(new Vector2(0.0F, 0.5F * ((_save_initial / _marsSpriteTransform.localScale.x) * 100)), ForceMode2D.Impulse);    
+            playerBody.AddRelativeForce(new Vector2(0.0F, 5.0F), ForceMode2D.Impulse);
         }
     }
 }
