@@ -8,6 +8,7 @@ public class MenuController : MonoBehaviour
     public void LoadGame(int charSkinIndex)
     {
         GlobalInformation.CharacterSkinIndex = charSkinIndex;
+        GlobalInformation.currentScene = 1;
         SceneManager.LoadScene("Game", LoadSceneMode.Single);
     }
 
