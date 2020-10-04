@@ -6,11 +6,6 @@ public class Player : MonoBehaviour
 {
     public bool isGrounded { get { return _isGrounded; } }
 
-    // 0 is RED
-    // 1 is BLUE
-    // 2 is GREEN
-    // 3 is YELLOW
-    public int characterSkinIndex = 0;
     public List<AnimatorOverrideController> animationControllers;
 
     //public List<Sprite>
@@ -23,7 +18,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         _animator = GetComponentInChildren<Animator>();
-        _animator.runtimeAnimatorController = animationControllers[characterSkinIndex];
+        _animator.runtimeAnimatorController = animationControllers[StaticCrossSceneInformation.CharacterSkinIndex];
     }
 
     // Update is called once per frame

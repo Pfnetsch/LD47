@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    public void LoadGame()
+    public void LoadGame(int charSkinIndex)
     {
+        StaticCrossSceneInformation.CharacterSkinIndex = charSkinIndex;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
