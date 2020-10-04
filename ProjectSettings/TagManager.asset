@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Ground
   - WaterSurface
-  - Collectible
   layers:
   - Default
   - TransparentFX

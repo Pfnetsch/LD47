@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
 {
     private float _movementSpeed = 0.2F;
+    private float _saveInitial;
 
     private CircleCollider2D _colliderSurface;
     private Transform _marsSpriteTransform;
@@ -18,11 +19,7 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
         _marsSpriteTransform = this.transform.Find("MarsSprite").transform;
 
         _initialSpriteSizeStep = _marsSpriteTransform.localScale.x / 10;
-    }
-
-    public void PlayerSetup(GameObject rootGameObject)
-    {
-        rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
+        _saveInitial = _initialSpriteSizeStep;
     }
 
     public void PlayerUpdate(Rigidbody2D playerBody)
@@ -35,7 +32,7 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed * -1F);
-            
+
             _marsSpriteTransform.localScale -= scaleChange;
         }
 
@@ -53,7 +50,7 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
 
         if (Input.GetKeyDown(KeyCode.Space) && playerBody.GetComponent<Player>().isGrounded)
         {
-            playerBody.AddRelativeForce(new Vector2(0.0F, 5.0F), ForceMode2D.Impulse);
+            playerBody.AddRelativeForce(new Vector2(0.0F, 0.5F * ((_saveInitial / _marsSpriteTransform.localScale.x) * 100)), ForceMode2D.Impulse);
         }
     }
 }
