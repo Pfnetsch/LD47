@@ -35,11 +35,12 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
             float animationPercentage = _teleportTransform.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime;
             if (animationPercentage < 1)
             {
-                _spriteRenderer.color += new Color(0, 0, 0, 0.3F * Time.deltaTime);
+                _spriteRenderer.color += new Color(0, 0, 0, 2F * Time.deltaTime);
             }
             else
             {
                 _teleportComplete = true;
+                _teleportTransform.gameObject.SetActive(false);
             }
         }
         else
