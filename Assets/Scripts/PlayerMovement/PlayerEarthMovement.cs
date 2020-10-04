@@ -24,6 +24,11 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
         _teleportTransform.GetComponent<Animator>().SetTrigger("startTP");
     }
 
+    public void PlayerSetup(GameObject rootGameObject)
+    {
+        rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
+    }
+
     public void PlayerUpdate(Rigidbody2D playerBody)
     {
         //Debug.Log("Earth Movement");
