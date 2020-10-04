@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         _animator = GetComponentInChildren<Animator>();
-        _animator.runtimeAnimatorController = animationControllers[StaticCrossSceneInformation.CharacterSkinIndex];
+        _animator.runtimeAnimatorController = animationControllers[GlobalInformation.CharacterSkinIndex];
     }
 
     // Update is called once per frame

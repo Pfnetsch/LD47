@@ -10,5 +10,9 @@ public static class GlobalInformation
     
     // Global information sharing
     public static int currentScene = 1;
-    
+
+    /// <summary>
+    /// 0 is RED, 1 is BLUE, 2 is GREEN, 3 is YELLOW
+    /// </summary>
+    public static int CharacterSkinIndex = 0;
 }

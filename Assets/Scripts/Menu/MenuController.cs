@@ -7,8 +7,8 @@ public class MenuController : MonoBehaviour
 {
     public void LoadGame(int charSkinIndex)
     {
-        StaticCrossSceneInformation.CharacterSkinIndex = charSkinIndex;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GlobalInformation.CharacterSkinIndex = charSkinIndex;
+        SceneManager.LoadScene("Game", LoadSceneMode.Single);
     }
 
     public void QuitGame()

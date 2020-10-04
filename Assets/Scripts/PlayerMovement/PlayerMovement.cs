@@ -9,10 +9,6 @@ public class PlayerMovement : MonoBehaviour
     public GameObject player;
     public Transform allPlanets;
 
-    // Increasing Speed - Mercury
-    private int _movementDirection = 0; // 0 standing still, 1 is left, 2 is right
-
-
     private Rigidbody2D _playerBody;
 
     // Start is called before the first frame update
