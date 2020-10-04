@@ -20,7 +20,7 @@ public class SpawnCollectibles : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inside = Planet.transform.GetComponent<Renderer>().bounds.size;
+        inside = Ring.transform.GetComponent<CircleCollider2D>().bounds.size;
         outside = Ring.transform.GetComponent<Renderer>().bounds.size;
         collectibleSize = Collectible.transform.GetComponent<Renderer>().bounds.size;
     }
@@ -48,6 +48,14 @@ public class SpawnCollectibles : MonoBehaviour
                     break;
                 }
             }
+        }
+    }
+
+    public void decreaseCount()
+    {
+        if (count > 0)
+        {
+            count--;
         }
     }
 }
