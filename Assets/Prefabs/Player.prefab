@@ -256,7 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 832900238}
   m_Layer: 0
-  m_Name: LaserTarget
+  m_Name: ZopfnTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 1190358590}
   - component: {fileID: 1190358589}
   m_Layer: 0
-  m_Name: Zopfn_0
+  m_Name: Zopfn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -654,7 +654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6150526810267157138}
   m_Layer: 0
-  m_Name: LaserTeleport
+  m_Name: LaserTransition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

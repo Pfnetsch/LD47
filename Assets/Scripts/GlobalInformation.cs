@@ -9,7 +9,7 @@ public static class GlobalInformation
     
     
     // Global information sharing
-    public static int currentScene = 7;
+    public static int currentScene = 2;
     public static int saturnScore = 0;
 
     /// <summary>
