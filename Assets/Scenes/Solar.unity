@@ -690,7 +690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a333b02a9fdf94b04b2059856f65f3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerBody: {fileID: 1912027929}
+  isJumpingAllowed: 0
 --- !u!1 &748552348
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,14 +751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1912027923}
-  camera: {fileID: 0}
-  currentPlanet: {fileID: 15156530}
-  nextPlanet: {fileID: 15156531}
   allPlanets: {fileID: 2113735721}
-  leftBorder: {fileID: 0}
-  rightBorder: {fileID: 0}
-  initialMovementSpeed: 0.2
-  isJumpingAllowed: 0
 --- !u!114 &748552352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1703,7 +1696,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb09200886362a245b12dd314c1005f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSkinIndex: 0
   animationControllers:
   - {fileID: 22100000, guid: eacac0d939cc7ff42a01115e0427e6ed, type: 2}
   - {fileID: 22100000, guid: 8a1fad7010921e74aaf3068ad1d66774, type: 2}

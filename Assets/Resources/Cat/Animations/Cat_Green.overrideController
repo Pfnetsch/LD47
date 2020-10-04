@@ -7,13 +7,17 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Cat_Green
-  m_Controller: {fileID: 9100000, guid: c329a7570268d7a4ebc4d0774f8b4f79, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6d977a4a41633be4e8af407f5131c04f, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: 3c7a237635270d048acd512ab66dc623, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: cf68fd258b20f1c43a15fbd299a602a4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 96948b9a48a93464fa11952a6272df83, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 97a871947756318418eeb84da92648f6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d60b26d2fa834134e8744b1749306a8f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 40fca8db7e1139b40a1ac06e37374ef3, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: b17c769431f581945bafe1c29cee906a, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 7625f60e81cde964da715aeb01cf6a21, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 43d69c39eb7d12f40b06ed4e71926ca6, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 97a871947756318418eeb84da92648f6, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: df8ab9b846baf2640a61b1d2a209eca4, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 9051ebf86f46e584cb49aea26ff6c222, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: df8ab9b846baf2640a61b1d2a209eca4, type: 2}
