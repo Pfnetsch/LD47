@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Bolt;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -59,6 +60,19 @@ public class Player : MonoBehaviour
             {
                 _animator.SetInteger("Index", 0);
             }
+        }
+
+        if (Variables.Application.Get<bool>("laserTransition"))
+        {
+            transform.Find("Sprite").gameObject.SetActive(false);
+
+            Transform laserTrans = transform.Find("LaserTransition");
+            laserTrans.gameObject.SetActive(true);
+
+            Transform zopfnTrans = laserTrans.Find("Zopfn");
+            Transform zopfnTarget = laserTrans.Find("ZopfnTarget");
+
+            zopfnTrans.position = Vector3.MoveTowards(zopfnTrans.position, zopfnTarget.position, 7F * Time.deltaTime);
         }
     }
 

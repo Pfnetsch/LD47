@@ -9,6 +9,7 @@ public class PlayerSaturnMovement : MonoBehaviour, IPlayerPlanetMovement
     public void PlayerSetup(GameObject rootGameObject)
     {
         rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 10;
+        rootGameObject.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
     }
     
     

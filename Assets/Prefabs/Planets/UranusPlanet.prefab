@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4453882429725612967}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 58, z: 0}
+  m_LocalPosition: {x: 0, y: 0.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4453882429829376675}
@@ -39,13 +39,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4453882429829376675}
+  - component: {fileID: 6795175463760275190}
   m_Layer: 0
   m_Name: UranusPlanet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4453882429829376675
 Transform:
   m_ObjectHideFlags: 0
@@ -59,9 +60,22 @@ Transform:
   m_Children:
   - {fileID: 4453882430138703324}
   - {fileID: 4453882429725612964}
+  - {fileID: 2791522743389957045}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6795175463760275190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4453882429829376674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec22c4a9ae14962ba24d239d80be355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4453882430138703327
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,6 +87,8 @@ GameObject:
   - component: {fileID: 4453882430138703324}
   - component: {fileID: 4453882430138703266}
   - component: {fileID: 4453882430138703325}
+  - component: {fileID: 3661577232992271850}
+  - component: {fileID: 4329389396312107540}
   m_Layer: 0
   m_Name: UranusSprite
   m_TagString: Ground
@@ -152,7 +168,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4453882430138703327}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -161,3 +177,130 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.57
+--- !u!68 &3661577232992271850
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4453882430138703327}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 1.58, y: 0}
+  - {x: 1.5646236, y: 0.21989352}
+  - {x: 1.5187935, y: 0.43550703}
+  - {x: 1.4434018, y: 0.6426439}
+  - {x: 1.339916, y: 0.83727247}
+  - {x: 1.2103503, y: 1.0156045}
+  - {x: 1.0572263, y: 1.174169}
+  - {x: 0.8835248, y: 1.3098793}
+  - {x: 0.6926264, y: 1.4200946}
+  - {x: 0.48824683, y: 1.5026693}
+  - {x: 0.27436402, y: 1.5559963}
+  - {x: 0.055141203, y: 1.5790375}
+  - {x: -0.16515505, y: 1.5713446}
+  - {x: -0.38223672, y: 1.5330673}
+  - {x: -0.5918785, y: 1.4649506}
+  - {x: -0.79000014, y: 1.3683201}
+  - {x: -0.9727451, y: 1.2450571}
+  - {x: -1.1365571, y: 1.0975602}
+  - {x: -1.278247, y: 0.9287006}
+  - {x: -1.3950572, y: 0.7417651}
+  - {x: -1.4847145, y: 0.5403916}
+  - {x: -1.5454733, y: 0.32850036}
+  - {x: -1.5761513, y: 0.110215224}
+  - {x: -1.5761511, y: -0.1102155}
+  - {x: -1.5454732, y: -0.32850063}
+  - {x: -1.4847144, y: -0.54039186}
+  - {x: -1.3950571, y: -0.7417653}
+  - {x: -1.2782468, y: -0.9287009}
+  - {x: -1.1365569, y: -1.0975603}
+  - {x: -0.9727452, y: -1.245057}
+  - {x: -0.7899999, y: -1.3683202}
+  - {x: -0.59187806, y: -1.4649507}
+  - {x: -0.38223666, y: -1.5330673}
+  - {x: -0.16515478, y: -1.5713446}
+  - {x: 0.055141665, y: -1.5790375}
+  - {x: 0.27436408, y: -1.5559963}
+  - {x: 0.48824707, y: -1.5026693}
+  - {x: 0.69262683, y: -1.4200945}
+  - {x: 0.8835248, y: -1.3098794}
+  - {x: 1.0572267, y: -1.1741687}
+  - {x: 1.2103505, y: -1.0156041}
+  - {x: 1.339916, y: -0.83727247}
+  - {x: 1.443402, y: -0.6426437}
+  - {x: 1.5187937, y: -0.43550652}
+  - {x: 1.5646236, y: -0.21989349}
+  - {x: 1.58, y: 0}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!114 &4329389396312107540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4453882430138703327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e686cf149a8e58945b9d537e6b9f4ba4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Radius: 1.58
+  NumEdges: 45
+--- !u!1 &7116722356243814883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2791522743389957045}
+  - component: {fileID: 4458851751152338139}
+  m_Layer: 0
+  m_Name: Collectible
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2791522743389957045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116722356243814883}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4453882429829376675}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4458851751152338139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116722356243814883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624362b9491645f99d7bfe93d35faa15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Planet: {fileID: 4453882429829376674}
+  CollectibleContainer: {fileID: 7116722356243814883}
+  Collectible: {fileID: 1908489968730514774, guid: f98e6b501a12f0849b9eaa7c9277b679, type: 3}
+  MAX_COUNT: 1

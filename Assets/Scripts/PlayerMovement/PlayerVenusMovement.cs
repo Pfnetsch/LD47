@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Bolt;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,7 @@ public class PlayerVenusMovement : MonoBehaviour, IPlayerPlanetMovement
     public void PlayerSetup(GameObject rootGameObject)
     {
         rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
+        rootGameObject.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
     }
 
     private int _movingToNextPlanet = 0;
@@ -58,14 +60,17 @@ public class PlayerVenusMovement : MonoBehaviour, IPlayerPlanetMovement
         {
             // The integer part is the number of time a state has been looped. The fractional part is the % (0-1) of progress in the current loop.
             float animationPercentage = _teleportTransform.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime;
-            if (animationPercentage < 1)
+
+            if (animationPercentage < 1F)
             {
                 _spriteRenderer.color -= new Color(0, 0, 0, 0.3F * Time.deltaTime);
             }
             else
             {
+                _teleportTransform.gameObject.SetActive(false);
+
                 GlobalInformation.currentScene++;
-                GlobalInformation.fasterTransition = true;
+                Variables.Application.Set("laserTransition", true);
                 SceneManager.LoadScene("Transition", LoadSceneMode.Single);
             }
         }

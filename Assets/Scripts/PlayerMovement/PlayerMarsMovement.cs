@@ -8,6 +8,9 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
     private float _movementSpeed = 0.2F;
     private float _saveInitial;
 
+    SpriteRenderer _dustRenderer;
+    Transform _dustTransform;
+
     private CircleCollider2D _colliderSurface;
     private Transform _marsSpriteTransform;
 
@@ -25,6 +28,7 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
     public void PlayerSetup(GameObject rootGameObject)
     {
         rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
+        rootGameObject.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
     }
 
     public void PlayerUpdate(Rigidbody2D playerBody)
@@ -33,7 +37,14 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
 
         Vector3 scaleChange = new Vector3(_initialSpriteSizeStep / _marsSpriteTransform.localScale.x, _initialSpriteSizeStep / _marsSpriteTransform.localScale.y, 0) * Time.deltaTime;
 
-        // move left
+        // dust generate
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+        {
+            _dustRenderer = playerBody.transform.Find("Sprite").GetComponent<SpriteRenderer>();
+            _dustTransform = playerBody.transform.Find("DustAnimation");
+        }
+             
+        // move and degrade
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed * -1F);
