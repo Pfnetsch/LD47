@@ -6,45 +6,77 @@ using UnityEngine;
 public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
 {
     private float _movementSpeed = 0.1F;
+    private bool _teleportComplete = false;
+   
+    SpriteRenderer _spriteRenderer;
+    Transform _teleportTransform;
+
+    public void PlayerSetup(GameObject rootGameObject)
+    {
+        rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
+
+        _spriteRenderer = rootGameObject.transform.Find("Sprite").GetComponent<SpriteRenderer>();
+        _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 0F);   // Invisible at the beginning
+
+        _teleportTransform = rootGameObject.transform.Find("TeleportAnimation");
+        _teleportTransform.gameObject.SetActive(true);
+
+        _teleportTransform.GetComponent<Animator>().SetTrigger("startTP");
+    }
 
     public void PlayerUpdate(Rigidbody2D playerBody)
     {
-        Debug.Log("Earth Movement");
+        //Debug.Log("Earth Movement");
 
-        if (playerBody.GetComponent<Player>().isUnderWater)
+        if (!_teleportComplete)
         {
-            if (Input.GetKey(KeyCode.LeftArrow))
+            float animationPercentage = _teleportTransform.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime;
+            if (animationPercentage < 1)
             {
-                playerBody.transform.Rotate(new Vector3(0F, 0F, 0.2F));
+                _spriteRenderer.color += new Color(0, 0, 0, 0.3F * Time.deltaTime);
             }
-            if (Input.GetKey(KeyCode.RightArrow))
+            else
             {
-                playerBody.transform.Rotate(new Vector3(0F, 0F, -0.2F));
-            }
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                playerBody.AddRelativeForce(new Vector2(0.0F, 0.8F), ForceMode2D.Force);
-            }
-            if (Input.GetKey(KeyCode.DownArrow))
-            {
-                playerBody.AddRelativeForce(new Vector2(0.0F, -0.8F), ForceMode2D.Force);
+                _teleportComplete = true;
             }
         }
         else
         {
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (playerBody.GetComponent<Player>().isUnderWater)
             {
-                gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed * -1F);
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    playerBody.transform.Rotate(new Vector3(0F, 0F, 0.2F));
+                }
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    playerBody.transform.Rotate(new Vector3(0F, 0F, -0.2F));
+                }
+                if (Input.GetKey(KeyCode.UpArrow))
+                {
+                    playerBody.AddRelativeForce(new Vector2(0.0F, 0.8F), ForceMode2D.Force);
+                }
+                if (Input.GetKey(KeyCode.DownArrow))
+                {
+                    playerBody.AddRelativeForce(new Vector2(0.0F, -0.8F), ForceMode2D.Force);
+                }
             }
-
-            if (Input.GetKey(KeyCode.RightArrow))
+            else
             {
-                gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed);
-            }
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed * -1F);
+                }
 
-            if (Input.GetKeyDown(KeyCode.Space) && playerBody.GetComponent<Player>().isGrounded)
-            {
-                playerBody.AddRelativeForce(new Vector2(0.0F, 5.0F), ForceMode2D.Impulse);
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed);
+                }
+
+                if (Input.GetKeyDown(KeyCode.Space) && playerBody.GetComponent<Player>().isGrounded)
+                {
+                    playerBody.AddRelativeForce(new Vector2(0.0F, 5.0F), ForceMode2D.Impulse);
+                }
             }
         }
     }

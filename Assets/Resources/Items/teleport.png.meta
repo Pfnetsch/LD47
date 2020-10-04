@@ -1,7 +1,181 @@
 fileFormatVersion: 2
 guid: 02beb01145bc87347a609f5519227e1c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -8753283788699527778
+    second: teleport_0
+  - first:
+      213: 3475970444626420675
+    second: teleport_1
+  - first:
+      213: -1693946357877086985
+    second: teleport_2
+  - first:
+      213: 5697982188757238426
+    second: teleport_3
+  - first:
+      213: 3320728301058369393
+    second: teleport_4
+  - first:
+      213: 306708660192380987
+    second: teleport_5
+  - first:
+      213: 6874293261119131606
+    second: teleport_6
+  - first:
+      213: -8321704825937697628
+    second: teleport_7
+  - first:
+      213: 6177973093397892565
+    second: teleport_8
+  - first:
+      213: 2627076685815808852
+    second: teleport_9
+  - first:
+      213: -877421889483244775
+    second: teleport_10
+  - first:
+      213: 3828264378972350445
+    second: teleport_11
+  - first:
+      213: -9109679576363151874
+    second: teleport_12
+  - first:
+      213: -7333632668176416807
+    second: teleport_13
+  - first:
+      213: 8605472270616437684
+    second: teleport_14
+  - first:
+      213: -355917378481978684
+    second: teleport_15
+  - first:
+      213: 1324077856576836843
+    second: teleport_16
+  - first:
+      213: 1201734932451623212
+    second: teleport_17
+  - first:
+      213: 1032162376495166377
+    second: teleport_18
+  - first:
+      213: 3207486387697045707
+    second: teleport_19
+  - first:
+      213: -5310171667483909492
+    second: teleport_20
+  - first:
+      213: -2649295448038580886
+    second: teleport_21
+  - first:
+      213: 6944399316806255399
+    second: teleport_22
+  - first:
+      213: 9003821950828356505
+    second: teleport_23
+  - first:
+      213: -6876050193185284112
+    second: teleport_24
+  - first:
+      213: 2764573275129431486
+    second: teleport_25
+  - first:
+      213: -5532118689241335713
+    second: teleport_26
+  - first:
+      213: -3840756920433468548
+    second: teleport_27
+  - first:
+      213: -2966838525591979942
+    second: teleport_28
+  - first:
+      213: 1025623901858095580
+    second: teleport_29
+  - first:
+      213: -6694654872364971081
+    second: teleport_30
+  - first:
+      213: 2817314284817061083
+    second: teleport_31
+  - first:
+      213: 1763324524044344159
+    second: teleport_32
+  - first:
+      213: 3580909336001456525
+    second: teleport_33
+  - first:
+      213: -3802300722544700370
+    second: teleport_34
+  - first:
+      213: 8781367967384241589
+    second: teleport_35
+  - first:
+      213: 1383095600222253970
+    second: teleport_36
+  - first:
+      213: -1403405868069875168
+    second: teleport_37
+  - first:
+      213: -4537277087252276489
+    second: teleport_38
+  - first:
+      213: 6225787519104865374
+    second: teleport_39
+  - first:
+      213: -5677050355582852425
+    second: teleport_40
+  - first:
+      213: 2834083191453749054
+    second: teleport_41
+  - first:
+      213: -1978511577366072003
+    second: teleport_42
+  - first:
+      213: -4840905743292900588
+    second: teleport_43
+  - first:
+      213: 3501991214790943480
+    second: teleport_44
+  - first:
+      213: 5151081563822993035
+    second: teleport_0
+  - first:
+      213: -7614892038162188814
+    second: teleport_1
+  - first:
+      213: 3630634868885409844
+    second: teleport_2
+  - first:
+      213: -3168384941361859101
+    second: teleport_3
+  - first:
+      213: 2147367938188589985
+    second: teleport_4
+  - first:
+      213: 8501225138558424744
+    second: teleport_5
+  - first:
+      213: 5820422823090996932
+    second: teleport_6
+  - first:
+      213: 6310613477914450020
+    second: teleport_7
+  - first:
+      213: -2119944070228453386
+    second: teleport_8
+  - first:
+      213: -6800693998414407334
+    second: teleport_9
+  - first:
+      213: 8877119480024528112
+    second: teleport_10
+  - first:
+      213: -3076685572163509522
+    second: teleport_11
+  - first:
+      213: -4109859414329719669
+    second: teleport_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +206,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -41,7 +215,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -73,9 +247,315 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: teleport_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8eabb404615c7740800000000000000
+      internalID: 5151081563822993035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teleport_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f574666908725690800000000000000
+      internalID: -7614892038162188814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teleport_2
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 430df056d2b926230800000000000000
+      internalID: 3630634868885409844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teleport_3
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e5fd62cea2a704d0800000000000000
+      internalID: -3168384941361859101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teleport_4
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ab3bc533cbfccd10800000000000000
+      internalID: 2147367938188589985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teleport_5
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a6556bd83b6af570800000000000000
+      internalID: 8501225138558424744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teleport_6
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c64aec38bb46c050800000000000000
+      internalID: 5820422823090996932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teleport_7
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46812e9e58dc39750800000000000000
+      internalID: 6310613477914450020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teleport_8
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f7565e99127492e0800000000000000
+      internalID: -2119944070228453386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teleport_9
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a59d06e07d41f91a0800000000000000
+      internalID: -6800693998414407334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teleport_10
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4ff83522dd13b70800000000000000
+      internalID: 8877119480024528112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teleport_11
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2ef99e5ca6d45d0800000000000000
+      internalID: -3076685572163509522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teleport_12
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b84051c33a8d6f6c0800000000000000
+      internalID: -4109859414329719669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: teleport_13
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 0
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dff42c81f3b93a90800000000000000
+      internalID: -7333632668176416807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

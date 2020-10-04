@@ -22,6 +22,11 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
         _saveInitial = _initialSpriteSizeStep;
     }
 
+    public void PlayerSetup(GameObject rootGameObject)
+    {
+        rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
+    }
+
     public void PlayerUpdate(Rigidbody2D playerBody)
     {
         Debug.Log("Mars Movement");

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public bool keepRunning = false;
     public bool isGrounded { get { return _isGrounded; } }
     public bool isUnderWater { get { return _isUnderWater; } }
+
+    public bool isButtonPressed { get { return _isButtonPressed; } }
 
     public List<AnimatorOverrideController> animationControllersMoveJump;
     public UnityEditor.Animations.AnimatorController animationControllerSwim;
@@ -14,6 +17,7 @@ public class Player : MonoBehaviour
 
     private bool _isGrounded = false;
     private bool _isUnderWater = false;
+    private bool _isButtonPressed = false;
 
     private Animator _animator;
 
@@ -32,6 +36,11 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (keepRunning)
+        {
+            _animator.SetInteger("Index", 2);
+            return;
+        }
         if (!_isUnderWater)
         {
             if (Input.GetKey(KeyCode.LeftArrow))
@@ -59,6 +68,11 @@ public class Player : MonoBehaviour
         {
             _isGrounded = true;
         }
+        else if (other.collider.CompareTag("Collectible"))
+        {
+            Destroy(other.gameObject);
+            GlobalInformation.saturnScore++;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
@@ -78,6 +92,10 @@ public class Player : MonoBehaviour
             _animator.runtimeAnimatorController = animationControllerSwim;
             _animator.SetInteger("CharIndex", GlobalInformation.CharacterSkinIndex);
         }
+        if (collision.CompareTag("Button"))
+        {
+            _isButtonPressed = true;
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)
@@ -87,6 +105,10 @@ public class Player : MonoBehaviour
             GetComponent<Rigidbody2D>().gravityScale = 1;
             _isUnderWater = false;
             _animator.runtimeAnimatorController = animationControllersMoveJump[GlobalInformation.CharacterSkinIndex];
+        }
+        if (collision.CompareTag("Button"))
+        {
+            _isButtonPressed = false;
         }
     }
 }
