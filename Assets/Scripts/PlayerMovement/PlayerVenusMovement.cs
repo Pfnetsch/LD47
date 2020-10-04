@@ -22,7 +22,7 @@ public class PlayerVenusMovement : MonoBehaviour, IPlayerPlanetMovement
         
         if (Input.GetKeyDown(KeyCode.Space) && _playerBody.GetComponent<Player>().isGrounded)
         {
-            _playerBody.AddRelativeForce(new Vector2(0.0F, 5.0F), ForceMode2D.Impulse);
+            _playerBody.AddRelativeForce(new Vector2(0.0F, 7.0F), ForceMode2D.Impulse);
         }
     }
 }
