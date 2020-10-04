@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         _playerBody = player.GetComponent<Rigidbody2D>();
-        allPlanets.GetChild(GlobalInformation.currentScene-1).GetComponent<IPlayerPlanetMovement>().PlayerSetup(player);
     }
 
     // Update is called once per frame

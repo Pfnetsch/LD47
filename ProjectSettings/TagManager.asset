@@ -6,8 +6,6 @@ TagManager:
   tags:
   - Ground
   - WaterSurface
-  - Collectible
-  - Button
   layers:
   - Default
   - TransparentFX

@@ -20,11 +20,6 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
         _initialSpriteSizeStep = _marsSpriteTransform.localScale.x / 10;
     }
 
-    public void PlayerSetup(GameObject rootGameObject)
-    {
-        rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
-    }
-
     public void PlayerUpdate(Rigidbody2D playerBody)
     {
         Debug.Log("Mars Movement");
