@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: 3c3fcfd74dc1a6547b58cb7361647e97
+guid: 2cbe3fabe4b50784b80707b74a6e3102
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5425050101103794934
-    second: cat_move_left_red_0
+      213: 3424196400837627080
+    second: cat_move_left_green-Sheet_0
   - first:
-      213: -519940169508212445
-    second: cat_move_left_red_1
+      213: 252052295221100140
+    second: cat_move_left_green-Sheet_1
   - first:
-      213: -5868351556144562001
-    second: cat_move_left_red_2
+      213: 1735169518242058537
+    second: cat_move_left_green-Sheet_2
   - first:
-      213: 9091819147787658901
-    second: cat_move_left_red_3
-  - first:
-      213: -2026369978966064942
-    second: cat_move_left_red_0
-  - first:
-      213: 7195577177006874120
-    second: cat_move_left_red_1
-  - first:
-      213: -266291707317770833
-    second: cat_move_left_red_2
-  - first:
-      213: -2351823633941301919
-    second: cat_move_left_red_3
+      213: -3421579377546044187
+    second: cat_move_left_green-Sheet_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -113,7 +101,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cat_move_left_red_0
+      name: cat_move_left_green-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -127,14 +115,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d046348d33e0e3e0800000000000000
-      internalID: -2026369978966064942
+      spriteID: 8cc09110c70358f20800000000000000
+      internalID: 3424196400837627080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_move_left_red_1
+      name: cat_move_left_green-Sheet_1
       rect:
         serializedVersion: 2
         x: 24
@@ -148,14 +136,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80e17659153dbd360800000000000000
-      internalID: 7195577177006874120
+      spriteID: c6eb9712a387f7300800000000000000
+      internalID: 252052295221100140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_move_left_red_2
+      name: cat_move_left_green-Sheet_2
       rect:
         serializedVersion: 2
         x: 48
@@ -169,14 +157,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa521b26a11fd4cf0800000000000000
-      internalID: -266291707317770833
+      spriteID: 92157e7cb7f841810800000000000000
+      internalID: 1735169518242058537
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_move_left_red_3
+      name: cat_move_left_green-Sheet_3
       rect:
         serializedVersion: 2
         x: 72
@@ -190,8 +178,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1657f8c8dd4ac5fd0800000000000000
-      internalID: -2351823633941301919
+      spriteID: 5ecd0963fab1480d0800000000000000
+      internalID: -3421579377546044187
       vertices: []
       indices: 
       edges: []

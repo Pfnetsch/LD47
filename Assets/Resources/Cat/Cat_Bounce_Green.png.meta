@@ -1,31 +1,22 @@
 fileFormatVersion: 2
-guid: 3c3fcfd74dc1a6547b58cb7361647e97
+guid: 6d818bc0091ce3e4aa6e6c91563333b8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5425050101103794934
-    second: cat_move_left_red_0
+      213: -3810924405581806906
+    second: Cat_Bounce_Green_0
   - first:
-      213: -519940169508212445
-    second: cat_move_left_red_1
+      213: 6425164435383138796
+    second: Cat_Bounce_Green_1
   - first:
-      213: -5868351556144562001
-    second: cat_move_left_red_2
+      213: 8030692335190360413
+    second: Cat_Bounce_Green_2
   - first:
-      213: 9091819147787658901
-    second: cat_move_left_red_3
+      213: 4598499180318253872
+    second: Cat_Bounce_Green_3
   - first:
-      213: -2026369978966064942
-    second: cat_move_left_red_0
-  - first:
-      213: 7195577177006874120
-    second: cat_move_left_red_1
-  - first:
-      213: -266291707317770833
-    second: cat_move_left_red_2
-  - first:
-      213: -2351823633941301919
-    second: cat_move_left_red_3
+      213: -7199280187354420367
+    second: Cat_Bounce_Green_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -113,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cat_move_left_red_0
+      name: Cat_Bounce_Green_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 23
-        height: 34
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d046348d33e0e3e0800000000000000
-      internalID: -2026369978966064942
+      spriteID: 6c20e6bb170ec1bc0800000000000000
+      internalID: -3810924405581806906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_move_left_red_1
+      name: Cat_Bounce_Green_1
       rect:
         serializedVersion: 2
         x: 24
         y: 0
         width: 23
-        height: 34
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80e17659153dbd360800000000000000
-      internalID: 7195577177006874120
+      spriteID: ce93c721305ca2950800000000000000
+      internalID: 6425164435383138796
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_move_left_red_2
+      name: Cat_Bounce_Green_2
       rect:
         serializedVersion: 2
         x: 48
         y: 0
         width: 23
-        height: 34
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa521b26a11fd4cf0800000000000000
-      internalID: -266291707317770833
+      spriteID: d5149736120c27f60800000000000000
+      internalID: 8030692335190360413
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_move_left_red_3
+      name: Cat_Bounce_Green_3
       rect:
         serializedVersion: 2
         x: 72
         y: 0
         width: 23
-        height: 34
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,8 +181,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1657f8c8dd4ac5fd0800000000000000
-      internalID: -2351823633941301919
+      spriteID: 0336bcef3a621df30800000000000000
+      internalID: 4598499180318253872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_Bounce_Green_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17b6b3220d4071c90800000000000000
+      internalID: -7199280187354420367
       vertices: []
       indices: 
       edges: []
