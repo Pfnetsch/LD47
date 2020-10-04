@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMercuryMovement : MonoBehaviour, IPlayerPlanetMovement
 {
@@ -14,19 +15,23 @@ public class PlayerMercuryMovement : MonoBehaviour, IPlayerPlanetMovement
     // Increasing Speed - Mercury
     private int _movementDirection = 0; // 0 standing still, 1 is left, 2 is right
     private float mercurySize = 100f;
+
+    private float timeOnGround = 0;
     
     public void PlayerUpdate(Rigidbody2D _playerBody)
     {
         // sync player vars
         bool isGrounded = _playerBody.GetComponent<Player>().isGrounded;
-        
-        if (movingToNextPlanet)
+
+        if (isGrounded)
         {
-            float step =  _movementSpeed * Time.deltaTime;
-            Debug.Log("We Done");
-            //player.transform.position = Vector3.MoveTowards(player.transform.position, nextPlanet.transform.position, step * 10F);
+            timeOnGround++;
         }
-        
+        else
+        {
+            timeOnGround = 0;
+        }
+
         // move left
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -86,23 +91,26 @@ public class PlayerMercuryMovement : MonoBehaviour, IPlayerPlanetMovement
         float r = mercurySize;
         double F = Math.Pow(_movementSpeed, 2.0) / r;
 
-        _playerBody.gravityScale = 1 - (float)Math.Pow(_movementSpeed,2) / 6000F;
-        
-        /*
-        if (_movementDirection != 0 && F < 1.1)
+        if (timeOnGround > 400 || (float)Math.Pow(_movementSpeed,2) / 6000F < 1.0F)
         {
-            _movementSpeed += initialMovementSpeed * (1 + Time.deltaTime * 0.01F);
+            _playerBody.gravityScale = 1 - (float)Math.Pow(_movementSpeed,2) / 6000F;
         }
-        */
 
-        /*
-        if (Vector3.Distance(_playerBody.transform.position, gameObject.transform.position) > gameObject.GetComponent<Renderer>().bounds.size.x + 10f)
+        if (_movementSpeed > 1000)
+        {
+            movingToNextPlanet = true;
+        }
+
+        Debug.Log(Vector3.Distance(_playerBody.transform.position, gameObject.transform.position));
+        
+        if (Vector3.Distance(_playerBody.transform.position, gameObject.transform.position) > 35f)
         {
             // lift off
             movingToNextPlanet = true;
-            _playerBody.gravityScale = 0;
+            GlobalInformation.currentScene++;
+            SceneManager.LoadScene("Transition");
         }
-        */
+        
     }
     
     private void ResetMovementSpeed(int movementDirection)
