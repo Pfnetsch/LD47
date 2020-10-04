@@ -1325,7 +1325,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587554641}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 877, y: 8, z: 0}
+  m_LocalPosition: {x: 897.6, y: -9.43, z: 0}
   m_LocalScale: {x: 22533.467, y: 12741.203, z: 1}
   m_Children: []
   m_Father: {fileID: 2113735721}
@@ -1704,6 +1704,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterSkinIndex: 0
+  animationControllers:
+  - {fileID: 22100000, guid: eacac0d939cc7ff42a01115e0427e6ed, type: 2}
+  - {fileID: 22100000, guid: 8a1fad7010921e74aaf3068ad1d66774, type: 2}
+  - {fileID: 22100000, guid: 29743d47fbcf9c94badf6c97d7eb9f07, type: 2}
+  - {fileID: 22100000, guid: 35ec0e663e7a8224fb94894002bae3e9, type: 2}
 --- !u!50 &1912027929
 Rigidbody2D:
   serializedVersion: 4
@@ -2986,7 +2991,7 @@ Animator:
   m_GameObject: {fileID: 1976451619}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c329a7570268d7a4ebc4d0774f8b4f79, type: 2}
+  m_Controller: {fileID: 22100000, guid: 8a1fad7010921e74aaf3068ad1d66774, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
