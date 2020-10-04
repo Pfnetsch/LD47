@@ -1,4 +1,5 @@
-﻿using MiscUtil.Threading;
+﻿using Bolt;
+using MiscUtil.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,14 +14,18 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
 
     public void PlayerSetup(GameObject rootGameObject)
     {
+        Variables.Application.Set("laserTransition", false);
+
         //setup
         rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
         rootGameObject.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
 
+        Transform laserTrans = rootGameObject.transform.Find("LaserTransition");
+        laserTrans.gameObject.SetActive(false);
+
         Transform spriteTrans = rootGameObject.transform.Find("Sprite");
         spriteTrans.gameObject.SetActive(true);
-        _spriteRenderer = spriteTrans.GetComponent<SpriteRenderer>();
-        
+        _spriteRenderer = spriteTrans.GetComponent<SpriteRenderer>(); 
         _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 0F);   // Invisible at the beginning
 
         _teleportTransform = rootGameObject.transform.Find("TeleportAnimation");
@@ -38,7 +43,7 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
             float animationPercentage = _teleportTransform.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime;
             if (animationPercentage < 1)
             {
-                _spriteRenderer.color += new Color(0, 0, 0, 1F * Time.deltaTime);
+                _spriteRenderer.color += new Color(0, 0, 0, 0.2F * Time.deltaTime);
             }
             else
             {
