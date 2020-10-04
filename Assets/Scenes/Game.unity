@@ -617,10 +617,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UranusPlanet
       objectReference: {fileID: 0}
-    - target: {fileID: 4453882429829376674, guid: e4fc1e658d2f23a4f9e78c3294cd49d9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4453882429829376675, guid: e4fc1e658d2f23a4f9e78c3294cd49d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -807,6 +803,10 @@ PrefabInstance:
     - target: {fileID: 6906393811975494117, guid: 44d5aefcac1844747a60801eb650ab4f, type: 3}
       propertyPath: m_Name
       value: EarthPlanet
+      objectReference: {fileID: 0}
+    - target: {fileID: 6906393811975494117, guid: 44d5aefcac1844747a60801eb650ab4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6906393811975494118, guid: 44d5aefcac1844747a60801eb650ab4f, type: 3}
       propertyPath: m_LocalPosition.x
