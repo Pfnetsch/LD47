@@ -21,11 +21,11 @@ public class OptionsController : MonoBehaviour
 
     public void SetMainVolume(float value)
     {
-        mainMixer.SetFloat("MainVolume", value);
+        mainMixer.SetFloat("MainVolume", value/2);
     }
     
     public void SetMusicVolume(float value)
     {
-        mainMixer.SetFloat("MusicVolume", value);
+        mainMixer.SetFloat("MusicVolume", value/2);
     }
 }
