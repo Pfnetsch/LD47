@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: b295eb45c2ee3074a94c4eebbaf62134
+guid: 3b32a8b1e80a4414cbd599b936af3186
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 718456157195966323
-    second: cat_move_jetpack_green_0
+      213: -6002371955864301029
+    second: Cat_swim_blue_0
   - first:
-      213: 7474946052762787462
-    second: cat_move_jetpack_green_1
+      213: 590796708666413872
+    second: Cat_swim_blue_1
   - first:
-      213: -3139910193602147673
-    second: cat_move_jetpack_green_2
+      213: -3539523083644395511
+    second: Cat_swim_blue_2
   - first:
-      213: -8912453477246922008
-    second: cat_move_jetpack_green_3
-  - first:
-      213: -900184333523931893
-    second: cat_move_jetpack_green_4
-  - first:
-      213: 6138020653525682833
-    second: cat_move_jetpack_green_5
-  - first:
-      213: -6416395246879451395
-    second: cat_move_jetpack_green_6
-  - first:
-      213: 1364631767940101984
-    second: cat_move_jetpack_green_7
+      213: -900592554749172800
+    second: Cat_swim_blue_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -113,94 +101,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cat_move_jetpack_green_0
+      name: Cat_swim_blue_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 38
-        width: 23
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3779b54811878f900800000000000000
-      internalID: 718456157195966323
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cat_move_jetpack_green_1
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 38
-        width: 23
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 68e522eb4d75cb760800000000000000
-      internalID: 7474946052762787462
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cat_move_jetpack_green_2
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 38
-        width: 23
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7aa47bb905ccc64d0800000000000000
-      internalID: -3139910193602147673
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cat_move_jetpack_green_3
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 38
-        width: 23
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e2908b58ca905480800000000000000
-      internalID: -8912453477246922008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cat_move_jetpack_green_4
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
         width: 23
         height: 33
@@ -211,38 +115,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0d2fe73e17e183f0800000000000000
-      internalID: -900184333523931893
+      spriteID: b1211f0128a43bca0800000000000000
+      internalID: -6002371955864301029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_move_jetpack_green_5
+      name: Cat_swim_blue_1
       rect:
         serializedVersion: 2
-        x: 24
-        y: 0
-        width: 23
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 19ac8658341ae2550800000000000000
-      internalID: 6138020653525682833
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cat_move_jetpack_green_6
-      rect:
-        serializedVersion: 2
-        x: 48
+        x: 27
         y: 0
         width: 23
         height: 33
@@ -253,20 +136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df6de3bb48264f6a0800000000000000
-      internalID: -6416395246879451395
+      spriteID: 0331882f97ee23800800000000000000
+      internalID: 590796708666413872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_move_jetpack_green_7
+      name: Cat_swim_blue_2
       rect:
         serializedVersion: 2
-        x: 72
+        x: 53
         y: 0
         width: 23
-        height: 34
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,8 +157,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0677841ec5520f210800000000000000
-      internalID: 1364631767940101984
+      spriteID: 900a415328611eec0800000000000000
+      internalID: -3539523083644395511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_swim_blue_3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 0
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c360dec7d37083f0800000000000000
+      internalID: -900592554749172800
       vertices: []
       indices: 
       edges: []

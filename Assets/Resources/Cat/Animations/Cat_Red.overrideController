@@ -7,7 +7,7 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Cat_Red
-  m_Controller: {fileID: 9100000, guid: c329a7570268d7a4ebc4d0774f8b4f79, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6d977a4a41633be4e8af407f5131c04f, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: 3c7a237635270d048acd512ab66dc623, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 41ea60df4ffc9114c8c04096559a9a43, type: 2}
@@ -17,3 +17,7 @@ AnimatorOverrideController:
     m_OverrideClip: {fileID: 7400000, guid: 9a00e5acd4df6a8448143754bf0ef5f5, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: df8ab9b846baf2640a61b1d2a209eca4, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: e203b006c0e7cca49ab86045b7c488ef, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 96948b9a48a93464fa11952a6272df83, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 43942c51ad65ca748a306e8a4a03e53e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d60b26d2fa834134e8744b1749306a8f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 97a99e43e530f3548a2482b370145b4e, type: 2}
