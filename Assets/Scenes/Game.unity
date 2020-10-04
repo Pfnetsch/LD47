@@ -711,30 +711,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5520949118195168010, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5520949118195168010, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5520949118195168010, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5520949118195168010, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 31.479492
-      objectReference: {fileID: 0}
-    - target: {fileID: 5520949118195168010, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 10.493164
-      objectReference: {fileID: 0}
-    - target: {fileID: 5520949118195168010, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3.4977214
-      objectReference: {fileID: 0}
     - target: {fileID: 5520949118986604744, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -782,14 +758,6 @@ PrefabInstance:
     - target: {fileID: 5520949118986604745, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5520949118986604746, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5520949118986604747, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
-      propertyPath: keepRunning
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
