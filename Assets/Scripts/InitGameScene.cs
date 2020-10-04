@@ -15,10 +15,14 @@ public class InitGameScene : MonoBehaviour
     public GameObject planet9;
 
     public GameObject player;
-    
+
+    private GravityControl _gravityControl;
+
     // Start is called before the first frame update
     void Start()
     {
+        _gravityControl = GetComponent<GravityControl>();
+
         // Initialize scene
         planet1.SetActive(false);
         planet2.SetActive(false);
@@ -74,6 +78,8 @@ public class InitGameScene : MonoBehaviour
 
     private void initPlayer(GameObject planet)
     {
+        _gravityControl.Planet = planet.transform;
+
         if (planet.transform.Find("Spawn"))
         {
             Transform spawn = planet.transform.Find("Spawn").transform;
