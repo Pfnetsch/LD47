@@ -25,10 +25,7 @@ public class PlayerMovement : MonoBehaviour
     // Increasing Speed - Mercury
     private int _movementDirection = 0; // 0 standing still, 1 is left, 2 is right
 
-    // Direction to the next Planet
 
-
-    // Jumping
     private Rigidbody2D _playerBody;
 
     // Start is called before the first frame update

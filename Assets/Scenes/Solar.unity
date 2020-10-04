@@ -1335,6 +1335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb09200886362a245b12dd314c1005f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterSkinIndex: 0
 --- !u!50 &1912027929
 Rigidbody2D:
   serializedVersion: 4
@@ -2532,7 +2533,7 @@ SpriteRenderer:
   m_SortingLayerID: -279287661
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1762196779577055134, guid: 783287509e840594fa931dc8335947a7, type: 3}
+  m_Sprite: {fileID: -3867638295536367146, guid: d6b4c95e7d0b0a74b8889df4f158c514, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2553,7 +2554,7 @@ Animator:
   m_GameObject: {fileID: 1976451619}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 22cd460f2070d574195f87f1fd765d27, type: 2}
+  m_Controller: {fileID: 9100000, guid: c329a7570268d7a4ebc4d0774f8b4f79, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
