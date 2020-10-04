@@ -1025,7 +1025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6906393811975494117, guid: 44d5aefcac1844747a60801eb650ab4f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6906393811975494118, guid: 44d5aefcac1844747a60801eb650ab4f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1241,6 +1241,10 @@ PrefabInstance:
     - target: {fileID: 9017710972929433323, guid: a534bea1cd50d8947a78b39963625e0b, type: 3}
       propertyPath: m_Name
       value: MarsPlanet
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017710972929433323, guid: a534bea1cd50d8947a78b39963625e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a534bea1cd50d8947a78b39963625e0b, type: 3}
