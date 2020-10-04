@@ -10,7 +10,6 @@ public class PlayerMercuryMovement : MonoBehaviour, IPlayerPlanetMovement
     private float _movementSpeed = 30F;
 
     public bool isJumpingAllowed = false;
-    private bool movingToNextPlanet = false;
 
     // Increasing Speed - Mercury
     private int _movementDirection = 0; // 0 standing still, 1 is left, 2 is right
@@ -102,17 +101,16 @@ public class PlayerMercuryMovement : MonoBehaviour, IPlayerPlanetMovement
             _playerBody.gravityScale = 1 - (float)Math.Pow(_movementSpeed,2) / 6000F;
         }
 
-        if (_movementSpeed > 1000)
-        {
-            movingToNextPlanet = true;
-        }
+        //if (_movementSpeed > 1000)
+        //{
+        //    movingToNextPlanet = true;
+        //}
 
         Debug.Log(Vector3.Distance(_playerBody.transform.position, gameObject.transform.position));
         
         if (Vector3.Distance(_playerBody.transform.position, gameObject.transform.position) > 35f)
         {
             // lift off
-            movingToNextPlanet = true;
             GlobalInformation.currentScene++;
             SceneManager.LoadScene("Transition", LoadSceneMode.Single);
         }

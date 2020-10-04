@@ -65,8 +65,11 @@ public class Player : MonoBehaviour
         if (Variables.Application.Get<bool>("laserTransition"))
         {
             transform.Find("Sprite").gameObject.SetActive(false);
-            transform.Find("LaserTransition").gameObject.SetActive(true);
-            Transform zopfnTrans = transform.Find("Zopfn");
+
+            Transform laserTrans = transform.Find("LaserTransition");
+            laserTrans.gameObject.SetActive(true);
+
+            Transform zopfnTrans = laserTrans.Find("Zopfn");
 
             zopfnTrans.position = Vector3.MoveTowards(zopfnTrans.position, transform.Find("ZopfnTarget").position, 0.2F * Time.deltaTime);
         }
