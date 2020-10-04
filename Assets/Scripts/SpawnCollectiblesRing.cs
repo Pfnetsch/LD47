@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 
-public class SpawnCollectibles : MonoBehaviour
+public class SpawnCollectiblesRing : MonoBehaviour, ISpawnCollectibles
 {
     public GameObject Planet;
     public GameObject Ring;

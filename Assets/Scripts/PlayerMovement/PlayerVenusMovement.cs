@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Bolt;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -66,7 +67,7 @@ public class PlayerVenusMovement : MonoBehaviour, IPlayerPlanetMovement
             else
             {
                 GlobalInformation.currentScene++;
-                GlobalInformation.fasterTransition = true;
+                Variables.Application.Set("laserTransition", true);
                 SceneManager.LoadScene("Transition", LoadSceneMode.Single);
             }
         }
