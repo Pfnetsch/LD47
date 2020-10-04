@@ -5,7 +5,12 @@ using UnityEngine;
 public class PlayerVenusMovement : MonoBehaviour, IPlayerPlanetMovement
 {
     private float _movementSpeed = 0.2F;
-    
+
+    public void PlayerSetup(GameObject rootGameObject)
+    {
+        rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
+    }
+
     public void PlayerUpdate(Rigidbody2D _playerBody)
     {
         Debug.Log("Venus Movement");

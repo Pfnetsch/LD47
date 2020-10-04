@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public bool keepRunning = false;
     public bool isGrounded { get { return _isGrounded; } }
     public bool isUnderWater { get { return _isUnderWater; } }
 
@@ -32,6 +33,11 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (keepRunning)
+        {
+            _animator.SetInteger("Index", 2);
+            return;
+        }
         if (!_isUnderWater)
         {
             if (Input.GetKey(KeyCode.LeftArrow))
@@ -58,6 +64,11 @@ public class Player : MonoBehaviour
         if (other.collider.CompareTag("Ground"))
         {
             _isGrounded = true;
+        }
+        else if (other.collider.CompareTag("Collectible"))
+        {
+            Destroy(other.gameObject);
+            GlobalInformation.saturnScore++;
         }
     }
 
