@@ -9,6 +9,6 @@ public class ScrollUV : MonoBehaviour
     {
         Material mat = GetComponent<MeshRenderer>().material;
         
-        mat.mainTextureOffset += new Vector2(Time.deltaTime / 10F, Time.deltaTime / 10F);
+        mat.mainTextureOffset += new Vector2(Time.deltaTime / 100F, Time.deltaTime / 100F);
     }
 }
