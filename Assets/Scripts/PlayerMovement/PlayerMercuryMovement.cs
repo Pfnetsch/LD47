@@ -17,7 +17,12 @@ public class PlayerMercuryMovement : MonoBehaviour, IPlayerPlanetMovement
     private float mercurySize = 100f;
 
     private float timeOnGround = 0;
-    
+
+    public void PlayerSetup(GameObject rootGameObject)
+    {
+        rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
+    }
+
     public void PlayerUpdate(Rigidbody2D _playerBody)
     {
         // sync player vars
