@@ -10,6 +10,8 @@ public class PlayerJupiterMovement : MonoBehaviour, IPlayerPlanetMovement
     private Transform _sideScroller;
     private Transform _platforms;
 
+    private bool _targetReached = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,32 +38,57 @@ public class PlayerJupiterMovement : MonoBehaviour, IPlayerPlanetMovement
         rootGameObject.GetComponent<Player>().SwitchAnimations(1);
     }
 
-    private float _lengthPlatformsMoved = 15; // Inital Space
+    private float _distancePlatformsMoved = 15; // Inital Space
     private int _indexPlatFormToReset = 0;
+
+    private float _distancePlayerMovedAway = 0;
 
     public void PlayerUpdate(Rigidbody2D _playerBody)
     {
         float moveDiff = _movementSpeed * -1F * Time.deltaTime;
 
-        _lengthPlatformsMoved += moveDiff;
-
-        _playerBody.transform.Translate(-moveDiff, 0, 0);
+        _distancePlatformsMoved += moveDiff;  // Half value to compensate for player movement
         _platforms.Translate(moveDiff * 2, 0, 0);   // Platforms are faster
 
-        if (_lengthPlatformsMoved < -142F)
+        if (_distancePlatformsMoved < -142F)
         {
             _platforms.GetChild(_indexPlatFormToReset).Translate(288F, 0, 0);
             _indexPlatFormToReset = ++_indexPlatFormToReset % 4;
-            _lengthPlatformsMoved = 0;
+            _distancePlatformsMoved = 0;
         }
 
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (!_targetReached)
         {
-            _playerBody.transform.Translate(0, _movementSpeed * 1F * Time.deltaTime, 0);
+            _playerBody.transform.Translate(-moveDiff, 0, 0);
+
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                _playerBody.transform.Translate(0, _movementSpeed * 1F * Time.deltaTime, 0);
+            }
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                _playerBody.transform.Translate(0, _movementSpeed * -1F * Time.deltaTime, 0);
+            }
+
+            if (_playerBody.GetComponent<Player>().isAtLocation)
+            {
+                _targetReached = true;
+                _sideScroller.gameObject.SetActive(false);
+            }
         }
-        if (Input.GetKey(KeyCode.DownArrow))
+        else
         {
-            _playerBody.transform.Translate(0, _movementSpeed * -1F * Time.deltaTime, 0);
+            _distancePlayerMovedAway += _movementSpeed * 2F * Time.deltaTime;
+            _playerBody.transform.Translate(0, _movementSpeed * 2F * Time.deltaTime, 0);
+
+            if (_distancePlayerMovedAway > 3)
+            {
+                _playerBody.transform.Translate(_movementSpeed * 3F * Time.deltaTime, 0, 0);
+            }
+            else if (_distancePlayerMovedAway > 10)
+            {
+                _playerBody.GetComponent<Player>().TransitToNextPlanet();
+            }
         }
      
         //// Left / Right Movement is slower for Balancing
