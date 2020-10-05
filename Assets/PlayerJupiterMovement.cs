@@ -12,6 +12,10 @@ public class PlayerJupiterMovement : MonoBehaviour, IPlayerPlanetMovement
 
     private bool _targetReached = false;
 
+    private float _distancePlatformsMoved = 15; // Inital Space
+    private int _indexPlatFormToReset = 0;
+    private float _distancePlayerMovedAway = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,11 +41,6 @@ public class PlayerJupiterMovement : MonoBehaviour, IPlayerPlanetMovement
         rootGameObject.GetComponent<Rigidbody2D>().gravityScale = 0.0F;
         rootGameObject.GetComponent<Player>().SwitchAnimations(1);
     }
-
-    private float _distancePlatformsMoved = 15; // Inital Space
-    private int _indexPlatFormToReset = 0;
-
-    private float _distancePlayerMovedAway = 0;
 
     public void PlayerUpdate(Rigidbody2D _playerBody)
     {
@@ -83,10 +82,11 @@ public class PlayerJupiterMovement : MonoBehaviour, IPlayerPlanetMovement
             if (_distancePlayerMovedAway > 3)
             {
                 _playerBody.transform.Translate(_movementSpeed * 3F * Time.deltaTime, 0, 0);
-            }
-            else if (_distancePlayerMovedAway > 7)
-            {
-                _playerBody.GetComponent<Player>().TransitToNextPlanet();
+
+                if (_distancePlayerMovedAway > 7)
+                {
+                    _playerBody.GetComponent<Player>().TransitToNextPlanet();
+                }
             }
         }
      
