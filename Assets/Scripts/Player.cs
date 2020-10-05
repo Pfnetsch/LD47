@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     }
 
     public List<AnimatorOverrideController> animationControllersMoveJump;
+    public List<AnimatorOverrideController> animationControllersMoveJetpack;
     public UnityEditor.Animations.AnimatorController animationControllerSwim;
 
     private bool _isPlayerVisible = true;
@@ -47,6 +48,9 @@ public class Player : MonoBehaviour
     private bool _isAtLocation = false;
     private bool _isAtRocket = false;
     private bool _lasterTransitionStarted = false;
+    private bool _hasJetpack = false;
+    private bool _speechBubbleActive = false;
+
 
     private Animator _animator;
     private Transform _laserTrans;
@@ -55,8 +59,7 @@ public class Player : MonoBehaviour
 
     private Transform _sprite;
     private Transform _rocketSprite;
-    private Transform _uiCanvas;
-
+    private Transform _speechBubble;
 
     // Start is called before the first frame update
     void Start()
@@ -70,7 +73,8 @@ public class Player : MonoBehaviour
 
         _sprite = transform.Find("Sprite");
         _rocketSprite = transform.Find("RocketSprite");
-        _uiCanvas = transform.Find("UICanvas");
+        Transform uiCanvas = transform.Find("UICameraCanvas");
+        _speechBubble = uiCanvas.Find("SpeechBubble");
 
         if (Variables.Application.Get<bool>("laserTransition"))
         {
@@ -81,6 +85,22 @@ public class Player : MonoBehaviour
         {
             IsPlayerVisible = false;
             IsRocketVisible = true;
+        }
+    }
+
+    /// <summary>
+    /// 0 Default Animations, 1 with Jetpack
+    /// </summary>
+    public void SwitchAnimations(int animIndex)
+    {
+        if (animIndex == 0)
+        {
+            _animator.runtimeAnimatorController = animationControllersMoveJump[GlobalInformation.CharacterSkinIndex];
+        }
+        else if (animIndex == 1)
+        {
+            _animator.runtimeAnimatorController = animationControllersMoveJetpack[GlobalInformation.CharacterSkinIndex];
+            _hasJetpack = true;
         }
     }
 
@@ -100,7 +120,7 @@ public class Player : MonoBehaviour
                 _animator.SetInteger("Index", 2);
                 return;
             }
-            if (!_isUnderWater)
+            if (!_isUnderWater && !_hasJetpack) // Normal Planet Movement
             {
                 if (Input.GetKey(KeyCode.LeftArrow))
                 {
@@ -117,6 +137,29 @@ public class Player : MonoBehaviour
                 else
                 {
                     _animator.SetInteger("Index", 0);
+                }
+            }
+            else if (!isUnderWater && _hasJetpack)  // Movement with Jetpack
+            {
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    _animator.SetInteger("Index", 1);
+                }
+                else if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    _animator.SetInteger("Index", 2);
+                }
+                else if (Input.GetKey(KeyCode.Space))
+                {
+                    _animator.SetInteger("Index", 2);
+                }
+                else if (Input.GetKey(KeyCode.UpArrow))
+                {
+                    _animator.SetInteger("Index", 2);
+                }
+                else if (Input.GetKey(KeyCode.DownArrow))
+                {
+                    _animator.SetInteger("Index", 3);
                 }
             }
         }
@@ -139,12 +182,26 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void ShowSpeechBubble(string text)
+    public void ShowSpeechBubble(string text, float durationInSec)
     {
-        Transform speechBubble = _uiCanvas.Find("SpeechBubble");
-        speechBubble.gameObject.SetActive(true);
-        TextMeshPro textTMP = speechBubble.GetComponentInChildren<TextMeshPro>();
-        textTMP.text = text;
+        if (!_speechBubbleActive)
+        {
+            _speechBubbleActive = true;
+
+            _speechBubble.gameObject.SetActive(true);
+            TextMeshProUGUI textTMP = _speechBubble.GetComponentInChildren<TextMeshProUGUI>();
+            textTMP.text = text;       
+
+            StartCoroutine(WaitForSecondsBeforeClosingSpeechBubble(durationInSec));
+        }
+    }
+
+    private IEnumerator WaitForSecondsBeforeClosingSpeechBubble(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+
+        _speechBubble.gameObject.SetActive(false);
+        _speechBubbleActive = false;
     }
 
     private void OnCollisionEnter2D(Collision2D other)

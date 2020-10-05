@@ -34,6 +34,7 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
         rootGameObject.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
         _dustRenderer = rootGameObject.transform.Find("Sprite").GetComponent<SpriteRenderer>();
         _dustTransform = rootGameObject.transform.Find("DustAnimation");
+        _dustTransform.gameObject.SetActive(true);
     }
 
     public void PlayerUpdate(Rigidbody2D playerBody)
@@ -44,7 +45,6 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
         // move and degrade
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            _dustTransform.gameObject.SetActive(true);
             _dustTransform.GetComponent<Animator>().SetInteger("Index", 1);
             gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed * -1F);
 
@@ -52,7 +52,6 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            _dustTransform.gameObject.SetActive(true);
             _dustTransform.GetComponent<Animator>().SetInteger("Index", 2);
             gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed);
 
@@ -60,13 +59,20 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
         }
         else
         {
-            _dustTransform.gameObject.SetActive(false);
-            _dustTransform.GetComponent<Animator>().SetInteger("Index", 0);
+            _dustTransform.GetComponent<Animator>().SetInteger("Index", 0); // No dust Animation
         }
 
-        if (_marsSpriteTransform.localScale.x < 0.5F)
+        if (_initialSpriteSizeStep == 0 && Input.GetKeyDown(KeyCode.Space))
+        {
+            playerBody.AddRelativeForce(new Vector2(0.0F, 2F), ForceMode2D.Force);
+
+        }
+
+        if (_initialSpriteSizeStep != 0 && _marsSpriteTransform.localScale.x < 0.5F)
         {
             _initialSpriteSizeStep = 0;
+            playerBody.GetComponent<Player>().ShowSpeechBubble("Hm.. The gravity is low already. \nLet's try the jetpack :)", 10.0F);
+            playerBody.GetComponent<Player>().SwitchAnimations(1);  // Switch to Jetpack
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && playerBody.GetComponent<Player>().isGrounded)

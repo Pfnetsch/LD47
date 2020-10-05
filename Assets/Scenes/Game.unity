@@ -454,10 +454,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2113735721}
     m_Modifications:
-    - target: {fileID: 775441548, guid: e774d76fdd885094bbb4a2fe36d635db, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1838723149241936810, guid: e774d76fdd885094bbb4a2fe36d635db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -509,18 +505,6 @@ PrefabInstance:
     - target: {fileID: 1838723149241936811, guid: e774d76fdd885094bbb4a2fe36d635db, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1838723149664699141, guid: e774d76fdd885094bbb4a2fe36d635db, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1838723149664699163, guid: e774d76fdd885094bbb4a2fe36d635db, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1838723149664699163, guid: e774d76fdd885094bbb4a2fe36d635db, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e774d76fdd885094bbb4a2fe36d635db, type: 3}
@@ -762,6 +746,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: JupiterPlanet
       objectReference: {fileID: 0}
+    - target: {fileID: 5031611987572125189, guid: 1115b48fa54103147b703fdceb1688c3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1115b48fa54103147b703fdceb1688c3, type: 3}
 --- !u!1001 &5520949117544343097
@@ -819,6 +807,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5520949118986604747, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
+      propertyPath: animationControllersMoveJetpack.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520949118986604747, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
+      propertyPath: animationControllersMoveJetpack.Array.data[0]
+      value: 
+      objectReference: {fileID: 22100000, guid: 82cfdacc2d938c248ab3eb5ba82a83d4, type: 2}
+    - target: {fileID: 5520949118986604747, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
+      propertyPath: animationControllersMoveJetpack.Array.data[1]
+      value: 
+      objectReference: {fileID: 22100000, guid: 04208dbcb860f2443919af522ee66c18, type: 2}
+    - target: {fileID: 5520949118986604747, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
+      propertyPath: animationControllersMoveJetpack.Array.data[2]
+      value: 
+      objectReference: {fileID: 22100000, guid: 28b6922a54cfda042a6ec8907fc42b88, type: 2}
+    - target: {fileID: 5520949118986604747, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
+      propertyPath: animationControllersMoveJetpack.Array.data[3]
+      value: 
+      objectReference: {fileID: 22100000, guid: 45a0e2427d9692f4f844c8ee48d19e2d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
 --- !u!1001 &6906393813349061868
@@ -1118,10 +1126,6 @@ PrefabInstance:
     - target: {fileID: 9017710972929433323, guid: a534bea1cd50d8947a78b39963625e0b, type: 3}
       propertyPath: m_Name
       value: MarsPlanet
-      objectReference: {fileID: 0}
-    - target: {fileID: 9017710972929433323, guid: a534bea1cd50d8947a78b39963625e0b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a534bea1cd50d8947a78b39963625e0b, type: 3}

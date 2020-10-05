@@ -22,7 +22,6 @@ public class PlayerSaturnMovement : MonoBehaviour, IPlayerPlanetMovement
         if (Input.GetKey(KeyCode.DownArrow))
         {
             _playerBody.transform.Translate(0, _movementSpeed * -1F * Time.deltaTime, 0);
-            _playerBody.GetComponent<Player>().ShowSpeechBubble("Huhu Haha Saturn!\n Lets try 2 lines.");
         }
         
         // move left

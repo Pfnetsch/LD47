@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Cat_Blue_Jetpack
+  m_Controller: {fileID: 9100000, guid: 1eedb8e459e16ee4296bf8164aa6349f, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 3c7a237635270d048acd512ab66dc623, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3c7a237635270d048acd512ab66dc623, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 96948b9a48a93464fa11952a6272df83, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b9b3faa9c44316c4a9ee774a4268e23c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d60b26d2fa834134e8744b1749306a8f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0af2c3dbe3e2c084ab0f061f0213f034, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 68d9ff72d59dcc14cbad2ea95b121d08, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 68d9ff72d59dcc14cbad2ea95b121d08, type: 2}
