@@ -3,6 +3,7 @@ using MiscUtil.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
 {
@@ -52,7 +53,7 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
             if (!_isTeleportComplete)
             {
                 float animationPercentage = _teleportTransform.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime;
-                if (animationPercentage < 1)
+                if (animationPercentage < 1F)
                 {
                     _spriteRenderer.color += new Color(0, 0, 0, 0.3F * Time.deltaTime);
                 }
@@ -118,13 +119,21 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
                 if (_isRocketSpawned && playerBody.GetComponent<Player>().isAtRocket)
                 {
                     playerBody.transform.position = _BaikonurRocket.position;
-                    //playerBody.transform.Find("Sprite").gameObject.SetActive(false);
-                    playerBody.transform.Find("RocketSprite").gameObject.SetActive(true);
                     _BaikonurRocket.gameObject.SetActive(false);
 
                     _isFlyingInRocket = true;
+                    playerBody.GetComponent<Player>().IsInRocket = true;
                 }
             }
+        }
+        else
+        {
+            // Flying in Rocket
+            playerBody.gravityScale = 0;
+            playerBody.AddRelativeForce(new Vector2(0F, 2F), ForceMode2D.Force);
+
+            GlobalInformation.currentScene++;
+            SceneManager.LoadScene("Transition", LoadSceneMode.Single);
         }
     }
 }

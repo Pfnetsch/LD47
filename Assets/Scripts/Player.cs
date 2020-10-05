@@ -6,7 +6,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public bool keepRunning = false;
-    public bool isInRocket = false;
+
+    private bool isInRocket = false;
 
     // Collision Variables
     public bool isGrounded { get { return _isGrounded; } }
@@ -17,8 +18,6 @@ public class Player : MonoBehaviour
 
     public List<AnimatorOverrideController> animationControllersMoveJump;
     public UnityEditor.Animations.AnimatorController animationControllerSwim;
-
-    //public List<Sprite>
 
     private bool _isGrounded = false;
     private bool _isUnderWater = false;
@@ -31,6 +30,29 @@ public class Player : MonoBehaviour
     private Transform _laserTrans;
     private Transform _zopfnTrans;
     private Transform _zopfnTarget;
+
+    private Transform _sprite;
+    private Transform _rocketSprite;
+
+    public bool IsInRocket 
+    { 
+        get => isInRocket;
+        set
+        {
+            isInRocket = value;
+            if (isInRocket)
+            {
+                _sprite.gameObject.SetActive(false);
+                _rocketSprite.gameObject.SetActive(true);
+            }
+            else
+            {
+                _sprite.gameObject.SetActive(true);
+                _rocketSprite.gameObject.SetActive(false);
+            }
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +62,9 @@ public class Player : MonoBehaviour
         _laserTrans = transform.Find("LaserTransition");
         _zopfnTrans = _laserTrans.Find("Zopfn");
         _zopfnTarget = _laserTrans.Find("ZopfnTarget");
+
+        _sprite = transform.Find("Sprite");
+        _rocketSprite = transform.Find("RocketSprite");
     }
 
     // Update is called once per frame
@@ -86,7 +111,7 @@ public class Player : MonoBehaviour
             {
                 if (!_lasterTransitionStarted)
                 {
-                    transform.Find("Sprite").gameObject.SetActive(false);
+                    _sprite.gameObject.SetActive(false);
 
                     _laserTrans.gameObject.SetActive(true);
                     _lasterTransitionStarted = true;
