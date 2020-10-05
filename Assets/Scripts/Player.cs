@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -202,6 +203,14 @@ public class Player : MonoBehaviour
 
         _speechBubble.gameObject.SetActive(false);
         _speechBubbleActive = false;
+    }
+
+    public IEnumerator TransitToNextPlanet()
+    {
+        yield return new WaitForSeconds(2.0F);
+
+        GlobalInformation.currentScene++;
+        SceneManager.LoadScene("Transition", LoadSceneMode.Single);
     }
 
     private void OnCollisionEnter2D(Collision2D other)

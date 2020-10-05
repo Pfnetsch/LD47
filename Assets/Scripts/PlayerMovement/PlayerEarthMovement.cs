@@ -134,15 +134,7 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
             playerBody.gravityScale = 0;
             playerBody.AddRelativeForce(new Vector2(0F, 2F), ForceMode2D.Force);
 
-            StartCoroutine(TransitToMars());
+            StartCoroutine(playerBody.GetComponent<Player>().TransitToNextPlanet());
         }
-    }
-
-    private IEnumerator TransitToMars()
-    {
-        yield return new WaitForSeconds(2.0F);
-
-        GlobalInformation.currentScene++;
-        SceneManager.LoadScene("Transition", LoadSceneMode.Single);
     }
 }

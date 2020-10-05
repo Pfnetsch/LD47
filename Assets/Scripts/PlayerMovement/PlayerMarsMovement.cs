@@ -45,17 +45,23 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
         // move and degrade
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            _dustTransform.GetComponent<Animator>().SetInteger("Index", 1);
-            gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed * -1F);
+            if (_initialSpriteSizeStep != 0)
+            {
+                _dustTransform.GetComponent<Animator>().SetInteger("Index", 1);
+                _marsSpriteTransform.localScale -= scaleChange;
+            }
 
-            _marsSpriteTransform.localScale -= scaleChange;
+            gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed * -1F);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            _dustTransform.GetComponent<Animator>().SetInteger("Index", 2);
-            gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed);
+            if (_initialSpriteSizeStep != 0)
+            {
+                _dustTransform.GetComponent<Animator>().SetInteger("Index", 2);
+                _marsSpriteTransform.localScale -= scaleChange;
+            }
 
-            _marsSpriteTransform.localScale -= scaleChange;
+            gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed);
         }
         else
         {
@@ -66,6 +72,7 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
         {
             playerBody.AddRelativeForce(new Vector2(0.0F, 2F), ForceMode2D.Force);
 
+            StartCoroutine(playerBody.GetComponent<Player>().TransitToNextPlanet());
         }
 
         if (_initialSpriteSizeStep != 0 && _marsSpriteTransform.localScale.x < 0.5F)
