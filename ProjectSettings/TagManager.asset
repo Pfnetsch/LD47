@@ -8,6 +8,8 @@ TagManager:
   - WaterSurface
   - Collectible
   - Button
+  - Location
+  - Rocket
   layers:
   - Default
   - TransparentFX

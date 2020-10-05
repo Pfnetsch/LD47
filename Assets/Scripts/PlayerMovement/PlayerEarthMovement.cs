@@ -7,16 +7,23 @@ using UnityEngine;
 public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
 {
     private float _movementSpeed = 0.1F;
-    private bool _teleportComplete = false;
-   
+    private bool _isTeleportComplete = false;
+    private bool _isRocketSpawned = false;
+
     SpriteRenderer _spriteRenderer;
     Transform _teleportTransform;
+
+    Transform _BaikonurRocket;
+    Transform _BaikonurText;
 
     public void PlayerSetup(GameObject rootGameObject)
     {
         GlobalInformation.currentCollectibles = 0;
 
         Variables.Application.Set("laserTransition", false);
+
+        _BaikonurText = transform.Find("Baikonur").Find("BaikonurText");
+        _BaikonurRocket = transform.Find("Baikonur").Find("Rocket");
 
         //setup
         rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
@@ -40,7 +47,7 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
     {
         //Debug.Log("Earth Movement");
 
-        if (!_teleportComplete)
+        if (!_isTeleportComplete)
         {
             float animationPercentage = _teleportTransform.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime;
             if (animationPercentage < 1)
@@ -49,7 +56,7 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
             }
             else
             {
-                _teleportComplete = true;
+                _isTeleportComplete = true;
                 _teleportTransform.gameObject.SetActive(false);
                 _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 1F);   // Invisible at the beginning
             }
@@ -93,10 +100,25 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
                 }
             }
 
-            if (GlobalInformation.currentCollectibles == 3)
+            if (!_isRocketSpawned && playerBody.GetComponent<Player>().isAtLocation)
             {
-                // && if near Baikonur
-                // Show Info for User once
+                _BaikonurText.gameObject.SetActive(true);
+
+                if (GlobalInformation.currentCollectibles == 3)
+                {
+                    _BaikonurRocket.gameObject.SetActive(true);
+                    _isRocketSpawned = true;
+                }
+            }
+            else
+                _BaikonurText.gameObject.SetActive(false);
+
+            if (_isRocketSpawned && playerBody.GetComponent<Player>().isAtRocket)
+            {
+                playerBody.transform.position = _BaikonurRocket.position;
+                //playerBody.transform.Find("Sprite").gameObject.SetActive(false);
+                playerBody.transform.Find("RocketSprite").gameObject.SetActive(true);
+                _BaikonurRocket.gameObject.SetActive(false);
             }
         }
     }
