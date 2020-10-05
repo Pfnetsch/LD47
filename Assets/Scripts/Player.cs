@@ -41,7 +41,6 @@ public class Player : MonoBehaviour
 
     private bool _isPlayerVisible = true;
     private bool _isRocketVisible = false;
-    private bool _hasJetpack = false;
 
     private bool _isGrounded = false;
     private bool _isUnderWater = false;
@@ -49,7 +48,7 @@ public class Player : MonoBehaviour
     private bool _isAtLocation = false;
     private bool _isAtRocket = false;
     private bool _lasterTransitionStarted = false;
-
+    private bool _hasJetpack = false;
     private bool _speechBubbleActive = false;
 
 
@@ -60,8 +59,7 @@ public class Player : MonoBehaviour
 
     private Transform _sprite;
     private Transform _rocketSprite;
-    private Transform _uiCanvas;
-
+    private Transform _speechBubble;
 
     // Start is called before the first frame update
     void Start()
@@ -75,7 +73,8 @@ public class Player : MonoBehaviour
 
         _sprite = transform.Find("Sprite");
         _rocketSprite = transform.Find("RocketSprite");
-        _uiCanvas = transform.Find("UICameraCanvas");
+        Transform uiCanvas = transform.Find("UICameraCanvas");
+        _speechBubble = uiCanvas.Find("SpeechBubble");
 
         if (Variables.Application.Get<bool>("laserTransition"))
         {
@@ -86,6 +85,22 @@ public class Player : MonoBehaviour
         {
             IsPlayerVisible = false;
             IsRocketVisible = true;
+        }
+    }
+
+    /// <summary>
+    /// 0 Default Animations, 1 with Jetpack
+    /// </summary>
+    public void SwitchAnimations(int animIndex)
+    {
+        if (animIndex == 0)
+        {
+            _animator.runtimeAnimatorController = animationControllersMoveJump[GlobalInformation.CharacterSkinIndex];
+        }
+        else if (animIndex == 1)
+        {
+            _animator.runtimeAnimatorController = animationControllersMoveJetpack[GlobalInformation.CharacterSkinIndex];
+            _hasJetpack = true;
         }
     }
 
@@ -136,7 +151,7 @@ public class Player : MonoBehaviour
                 }
                 else if (Input.GetKey(KeyCode.Space))
                 {
-                    _animator.SetInteger("Index", 3);
+                    _animator.SetInteger("Index", 2);
                 }
                 else if (Input.GetKey(KeyCode.UpArrow))
                 {
@@ -173,9 +188,8 @@ public class Player : MonoBehaviour
         {
             _speechBubbleActive = true;
 
-            Transform speechBubble = _uiCanvas.Find("SpeechBubble");
-            speechBubble.gameObject.SetActive(true);
-            TextMeshProUGUI textTMP = speechBubble.GetComponentInChildren<TextMeshProUGUI>();
+            _speechBubble.gameObject.SetActive(true);
+            TextMeshProUGUI textTMP = _speechBubble.GetComponentInChildren<TextMeshProUGUI>();
             textTMP.text = text;       
 
             StartCoroutine(WaitForSecondsBeforeClosingSpeechBubble(durationInSec));
@@ -186,8 +200,7 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
 
-        Transform speechBubble = _uiCanvas.Find("SpeechBubble");
-        speechBubble.gameObject.SetActive(false);
+        _speechBubble.gameObject.SetActive(false);
         _speechBubbleActive = false;
     }
 

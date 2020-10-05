@@ -807,6 +807,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5520949118986604747, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
+      propertyPath: animationControllersMoveJetpack.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520949118986604747, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
+      propertyPath: animationControllersMoveJetpack.Array.data[0]
+      value: 
+      objectReference: {fileID: 22100000, guid: 82cfdacc2d938c248ab3eb5ba82a83d4, type: 2}
+    - target: {fileID: 5520949118986604747, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
+      propertyPath: animationControllersMoveJetpack.Array.data[1]
+      value: 
+      objectReference: {fileID: 22100000, guid: 04208dbcb860f2443919af522ee66c18, type: 2}
+    - target: {fileID: 5520949118986604747, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
+      propertyPath: animationControllersMoveJetpack.Array.data[2]
+      value: 
+      objectReference: {fileID: 22100000, guid: 28b6922a54cfda042a6ec8907fc42b88, type: 2}
+    - target: {fileID: 5520949118986604747, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
+      propertyPath: animationControllersMoveJetpack.Array.data[3]
+      value: 
+      objectReference: {fileID: 22100000, guid: 45a0e2427d9692f4f844c8ee48d19e2d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
 --- !u!1001 &6906393813349061868
