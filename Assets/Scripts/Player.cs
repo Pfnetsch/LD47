@@ -8,8 +8,9 @@ public class Player : MonoBehaviour
     public bool keepRunning = false;
     public bool isGrounded { get { return _isGrounded; } }
     public bool isUnderWater { get { return _isUnderWater; } }
-
     public bool isButtonPressed { get { return _isButtonPressed; } }
+    public bool isAtLocation { get { return _isAtLocation; } }
+    public bool isAtRocket { get { return _isAtRocket; } }
 
     public List<AnimatorOverrideController> animationControllersMoveJump;
     public UnityEditor.Animations.AnimatorController animationControllerSwim;
@@ -19,6 +20,8 @@ public class Player : MonoBehaviour
     private bool _isGrounded = false;
     private bool _isUnderWater = false;
     private bool _isButtonPressed = false;
+    private bool _isAtLocation = false;
+    private bool _isAtRocket = false;
 
     private Animator _animator;
 
@@ -105,7 +108,15 @@ public class Player : MonoBehaviour
         {
             _isButtonPressed = true;
         }
-        else if (collision.CompareTag("Collectible"))
+        if (collision.CompareTag("Location"))
+        {
+            _isAtLocation = true;
+        }
+        if (collision.CompareTag("Rocket"))
+        {
+            _isAtRocket = true;
+        }
+        if (collision.CompareTag("Collectible"))
         {
             Destroy(collision.gameObject);
             GlobalInformation.currentCollectibles++;
@@ -123,6 +134,14 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Button"))
         {
             _isButtonPressed = false;
+        }
+        if (collision.CompareTag("Location"))
+        {
+            _isAtLocation = false;
+        }
+        if (collision.CompareTag("Rocket"))
+        {
+            _isAtRocket = false;
         }
     }
 }
