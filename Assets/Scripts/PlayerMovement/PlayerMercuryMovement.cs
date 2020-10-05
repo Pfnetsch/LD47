@@ -21,6 +21,9 @@ public class PlayerMercuryMovement : MonoBehaviour, IPlayerPlanetMovement
     {
         rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
         rootGameObject.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
+
+        rootGameObject.GetComponent<Player>().ShowSpeechBubble("Ah, it's every time a pleasure to visit mercurcy.", 5.0F);
+        rootGameObject.GetComponent<Player>().ShowSpeechBubble("It's kinda warm here today though,\nmaybe I should find some other planet to stay on!", 5.0F);
     }
 
     public void PlayerUpdate(Rigidbody2D _playerBody)

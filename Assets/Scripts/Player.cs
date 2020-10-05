@@ -53,6 +53,8 @@ public class Player : MonoBehaviour
     private bool _lasterTransitionStarted = false;
     private bool _speechBubbleActive = false;
 
+    private string _secondSpeechBubble;
+    private float _secondSpeechBubbleDuration;
 
     private Animator _animator;
     private Transform _laserTrans;
@@ -196,14 +198,25 @@ public class Player : MonoBehaviour
 
             StartCoroutine(WaitForSecondsBeforeClosingSpeechBubble(durationInSec));
         }
+        else
+        {
+            _secondSpeechBubble = text;
+            _secondSpeechBubbleDuration = durationInSec;
+        }
     }
 
     private IEnumerator WaitForSecondsBeforeClosingSpeechBubble(float seconds)
     {
         yield return new WaitForSeconds(seconds);
 
-        _speechBubble.gameObject.SetActive(false);
         _speechBubbleActive = false;
+        _speechBubble.gameObject.SetActive(false);
+
+        if (!string.IsNullOrEmpty(_secondSpeechBubble))
+        {
+            ShowSpeechBubble(_secondSpeechBubble, _secondSpeechBubbleDuration);
+            _secondSpeechBubble = string.Empty;
+        } 
     }
 
     public IEnumerator TransitToNextPlanet()
