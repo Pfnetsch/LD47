@@ -600,7 +600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2094540315179745195, guid: 2c909b6d22b64cb4e90a37e2314bdfd7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c909b6d22b64cb4e90a37e2314bdfd7, type: 3}
@@ -675,10 +675,6 @@ PrefabInstance:
     - target: {fileID: 4453882429829376674, guid: e4fc1e658d2f23a4f9e78c3294cd49d9, type: 3}
       propertyPath: m_Name
       value: UranusPlanet
-      objectReference: {fileID: 0}
-    - target: {fileID: 4453882429829376674, guid: e4fc1e658d2f23a4f9e78c3294cd49d9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4453882429829376675, guid: e4fc1e658d2f23a4f9e78c3294cd49d9, type: 3}
       propertyPath: m_LocalPosition.x

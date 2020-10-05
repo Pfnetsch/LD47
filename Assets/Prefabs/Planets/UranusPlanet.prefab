@@ -615,7 +615,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4453882430138703324}
   - component: {fileID: 4453882430138703266}
-  - component: {fileID: 4453882430138703325}
   - component: {fileID: 3661577232992271850}
   - component: {fileID: 4329389396312107540}
   m_Layer: 0
@@ -690,22 +689,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4453882430138703325
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4453882430138703327}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.57
 --- !u!68 &3661577232992271850
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -812,7 +795,7 @@ GameObject:
   - component: {fileID: 2791522743389957045}
   - component: {fileID: 4458851751152338139}
   m_Layer: 0
-  m_Name: Collectible
+  m_Name: CollectibleSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -846,5 +829,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Planet: {fileID: 4453882429829376674}
   CollectibleContainer: {fileID: 7116722356243814883}
-  Collectible: {fileID: 1908489968730514774, guid: f98e6b501a12f0849b9eaa7c9277b679, type: 3}
+  Collectible: {fileID: 6088533896505189698, guid: aec6b2afbf088dd40bcbf665400bf7ea, type: 3}
   MAX_COUNT: 1
