@@ -50,11 +50,10 @@ public class PlayerJupiterMovement : MonoBehaviour, IPlayerPlanetMovement
         _distancePlatformsMoved += moveDiff;  // Half value to compensate for player movement
         _platforms.Translate(moveDiff * 2, 0, 0);   // Platforms are faster
 
-        if (_distancePlatformsMoved < -142F)
+        if (_platforms.GetChild(_indexPlatFormToReset).position.x < _playerBody.position.x - 140)
         {
             _platforms.GetChild(_indexPlatFormToReset).Translate(288F, 0, 0);
             _indexPlatFormToReset = ++_indexPlatFormToReset % 4;
-            _distancePlatformsMoved = 0;
         }
 
         if (!_targetReached)
@@ -85,7 +84,7 @@ public class PlayerJupiterMovement : MonoBehaviour, IPlayerPlanetMovement
             {
                 _playerBody.transform.Translate(_movementSpeed * 3F * Time.deltaTime, 0, 0);
             }
-            else if (_distancePlayerMovedAway > 10)
+            else if (_distancePlayerMovedAway > 7)
             {
                 _playerBody.GetComponent<Player>().TransitToNextPlanet();
             }

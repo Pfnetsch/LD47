@@ -312,6 +312,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1838723149241936810, guid: e774d76fdd885094bbb4a2fe36d635db, type: 3}
   m_PrefabInstance: {fileID: 1838723147837686347}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1524396163 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1524396163, guid: 1115b48fa54103147b703fdceb1688c3, type: 3}
+  m_PrefabInstance: {fileID: 5031611987118283827}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1524396164
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524396163}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1530647858 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5520949118986604745, guid: 90b678b6ea009fc4898bb82a165843d5, type: 3}
@@ -698,6 +729,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2113735721}
     m_Modifications:
+    - target: {fileID: 1524396164, guid: 1115b48fa54103147b703fdceb1688c3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524396164, guid: 1115b48fa54103147b703fdceb1688c3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1524396165, guid: 1115b48fa54103147b703fdceb1688c3, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -750,7 +789,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: JupiterPlanet
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1524396165, guid: 1115b48fa54103147b703fdceb1688c3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1115b48fa54103147b703fdceb1688c3, type: 3}
 --- !u!1001 &5520949117544343097
 PrefabInstance:
