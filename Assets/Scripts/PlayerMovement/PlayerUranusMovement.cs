@@ -101,6 +101,7 @@ public class PlayerUranusMovement : MonoBehaviour, IPlayerPlanetMovement
             {
                 _playerBody.GetComponent<Player>().ShowSpeechBubble("Maybe i can use this to get a lift!", 5.0F);
                 _playerBody.GetComponent<Player>().SatelliteGrabPlayerAndMoveToNextPlanet();
+                transform.Find("UranusSprite").GetComponent<EdgeCollider2D>().enabled = false;
                 _probeFound = true;
             }
         }
