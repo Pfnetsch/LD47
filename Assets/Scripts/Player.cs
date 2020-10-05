@@ -6,6 +6,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public bool keepRunning = false;
+
+    private bool isInRocket = false;
+
+    // Collision Variables
     public bool isGrounded { get { return _isGrounded; } }
     public bool isUnderWater { get { return _isUnderWater; } }
     public bool isButtonPressed { get { return _isButtonPressed; } }
@@ -15,21 +19,52 @@ public class Player : MonoBehaviour
     public List<AnimatorOverrideController> animationControllersMoveJump;
     public UnityEditor.Animations.AnimatorController animationControllerSwim;
 
-    //public List<Sprite>
-
     private bool _isGrounded = false;
     private bool _isUnderWater = false;
     private bool _isButtonPressed = false;
     private bool _isAtLocation = false;
     private bool _isAtRocket = false;
+    private bool _lasterTransitionStarted = false;
 
     private Animator _animator;
+    private Transform _laserTrans;
+    private Transform _zopfnTrans;
+    private Transform _zopfnTarget;
+
+    private Transform _sprite;
+    private Transform _rocketSprite;
+
+    public bool IsInRocket 
+    { 
+        get => isInRocket;
+        set
+        {
+            isInRocket = value;
+            if (isInRocket)
+            {
+                _sprite.gameObject.SetActive(false);
+                _rocketSprite.gameObject.SetActive(true);
+            }
+            else
+            {
+                _sprite.gameObject.SetActive(true);
+                _rocketSprite.gameObject.SetActive(false);
+            }
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponentInChildren<Animator>();
         _animator.runtimeAnimatorController = animationControllersMoveJump[GlobalInformation.CharacterSkinIndex];
+
+        _laserTrans = transform.Find("LaserTransition");
+        _zopfnTrans = _laserTrans.Find("Zopfn");
+        _zopfnTarget = _laserTrans.Find("ZopfnTarget");
+
+        _sprite = transform.Find("Sprite");
+        _rocketSprite = transform.Find("RocketSprite");
     }
 
     // Update is called once per frame
@@ -40,42 +75,52 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (keepRunning)
+        // Stop Movement if in Transition
+        if (!Variables.Application.Get<bool>("inTransition"))
         {
-            _animator.SetInteger("Index", 2);
-            return;
-        }
-        if (!_isUnderWater)
-        {
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                _animator.SetInteger("Index", 1);
-            }
-            else if (Input.GetKey(KeyCode.RightArrow))
+            if (keepRunning)
             {
                 _animator.SetInteger("Index", 2);
+                return;
             }
-            else if (Input.GetKey(KeyCode.Space))
+            if (!_isUnderWater)
             {
-                _animator.SetInteger("Index", 3);
-            }
-            else
-            {
-                _animator.SetInteger("Index", 0);
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    _animator.SetInteger("Index", 1);
+                }
+                else if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    _animator.SetInteger("Index", 2);
+                }
+                else if (Input.GetKey(KeyCode.Space))
+                {
+                    _animator.SetInteger("Index", 3);
+                }
+                else
+                {
+                    _animator.SetInteger("Index", 0);
+                }
             }
         }
-
-        if (Variables.Application.Get<bool>("laserTransition"))
+        else
         {
-            transform.Find("Sprite").gameObject.SetActive(false);
+            _animator.SetInteger("Index", 0);
 
-            Transform laserTrans = transform.Find("LaserTransition");
-            laserTrans.gameObject.SetActive(true);
+            if (Variables.Application.Get<bool>("laserTransition"))
+            {
+                if (!_lasterTransitionStarted)
+                {
+                    _sprite.gameObject.SetActive(false);
 
-            Transform zopfnTrans = laserTrans.Find("Zopfn");
-            Transform zopfnTarget = laserTrans.Find("ZopfnTarget");
-
-            zopfnTrans.position = Vector3.MoveTowards(zopfnTrans.position, zopfnTarget.position, 7F * Time.deltaTime);
+                    _laserTrans.gameObject.SetActive(true);
+                    _lasterTransitionStarted = true;
+                }
+                else if (_lasterTransitionStarted)
+                {
+                    _zopfnTrans.position = Vector3.MoveTowards(_zopfnTrans.position, _zopfnTarget.position, 8F * Time.deltaTime);
+                }
+            }
         }
     }
 
