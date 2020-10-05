@@ -133,6 +133,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4453882429829376675, guid: e4fc1e658d2f23a4f9e78c3294cd49d9, type: 3}
   m_PrefabInstance: {fileID: 4453882429920685794}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &275227318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 275227319}
+  m_Layer: 0
+  m_Name: SideScroller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &275227319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275227318}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1025323575}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &511506438
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,10 +776,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: JupiterPlanet
       objectReference: {fileID: 0}
-    - target: {fileID: 5031611987572125189, guid: 1115b48fa54103147b703fdceb1688c3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1115b48fa54103147b703fdceb1688c3, type: 3}
 --- !u!1001 &5520949117544343097
@@ -1126,6 +1152,10 @@ PrefabInstance:
     - target: {fileID: 9017710972929433323, guid: a534bea1cd50d8947a78b39963625e0b, type: 3}
       propertyPath: m_Name
       value: MarsPlanet
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017710972929433323, guid: a534bea1cd50d8947a78b39963625e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a534bea1cd50d8947a78b39963625e0b, type: 3}
