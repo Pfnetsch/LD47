@@ -7,8 +7,6 @@ public class Player : MonoBehaviour
 {
     public bool keepRunning = false;
 
-    private bool isInRocket = false;
-
     // Collision Variables
     public bool isGrounded { get { return _isGrounded; } }
     public bool isUnderWater { get { return _isUnderWater; } }
@@ -16,8 +14,31 @@ public class Player : MonoBehaviour
     public bool isAtLocation { get { return _isAtLocation; } }
     public bool isAtRocket { get { return _isAtRocket; } }
 
+    public bool IsPlayerVisible
+    { 
+        get => _isPlayerVisible;
+        set
+        {
+            _isPlayerVisible = value;
+            _sprite.gameObject.SetActive(_isPlayerVisible);
+        }
+    }
+
+    public bool IsRocketVisible
+    { 
+        get => _isRocketVisible;
+        set
+        {
+            _isRocketVisible = value;
+            _rocketSprite.gameObject.SetActive(_isRocketVisible);
+        }
+    }
+
     public List<AnimatorOverrideController> animationControllersMoveJump;
     public UnityEditor.Animations.AnimatorController animationControllerSwim;
+
+    private bool _isPlayerVisible = true;
+    private bool _isRocketVisible = false;
 
     private bool _isGrounded = false;
     private bool _isUnderWater = false;
@@ -34,25 +55,6 @@ public class Player : MonoBehaviour
     private Transform _sprite;
     private Transform _rocketSprite;
 
-    public bool IsInRocket 
-    { 
-        get => isInRocket;
-        set
-        {
-            isInRocket = value;
-            if (isInRocket)
-            {
-                _sprite.gameObject.SetActive(false);
-                _rocketSprite.gameObject.SetActive(true);
-            }
-            else
-            {
-                _sprite.gameObject.SetActive(true);
-                _rocketSprite.gameObject.SetActive(false);
-            }
-        }
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +67,17 @@ public class Player : MonoBehaviour
 
         _sprite = transform.Find("Sprite");
         _rocketSprite = transform.Find("RocketSprite");
+
+        if (Variables.Application.Get<bool>("laserTransition"))
+        {
+            IsPlayerVisible = false;
+        }
+
+        if (Variables.Application.Get<bool>("inRocket"))
+        {
+            IsPlayerVisible = false;
+            IsRocketVisible = true;
+        }
     }
 
     // Update is called once per frame
@@ -111,8 +124,6 @@ public class Player : MonoBehaviour
             {
                 if (!_lasterTransitionStarted)
                 {
-                    _sprite.gameObject.SetActive(false);
-
                     _laserTrans.gameObject.SetActive(true);
                     _lasterTransitionStarted = true;
                 }

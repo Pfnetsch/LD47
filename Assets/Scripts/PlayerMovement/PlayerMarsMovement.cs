@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Bolt;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
@@ -27,17 +28,17 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
 
     public void PlayerSetup(GameObject rootGameObject)
     {
+        Variables.Application.Set("inRocket", false);
+
         rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
         rootGameObject.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
         _dustRenderer = rootGameObject.transform.Find("Sprite").GetComponent<SpriteRenderer>();
         _dustTransform = rootGameObject.transform.Find("DustAnimation");
-
     }
 
     public void PlayerUpdate(Rigidbody2D playerBody)
     {
-        Debug.Log("Mars Movement");
-
+        //Debug.Log("Mars Movement");
         Vector3 scaleChange = new Vector3(_initialSpriteSizeStep / _marsSpriteTransform.localScale.x, _initialSpriteSizeStep / _marsSpriteTransform.localScale.y, 0) * Time.deltaTime;
 
         // move and degrade
