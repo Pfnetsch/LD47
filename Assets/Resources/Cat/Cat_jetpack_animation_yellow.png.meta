@@ -1,7 +1,37 @@
 fileFormatVersion: 2
 guid: dede1d42f6b252044b672e20d173de43
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3282001797442053580
+    second: Cat_jetpack_animation_yellow_0
+  - first:
+      213: -5378789805729025789
+    second: Cat_jetpack_animation_yellow_1
+  - first:
+      213: 7322220970208151986
+    second: Cat_jetpack_animation_yellow_2
+  - first:
+      213: -4607727503819917208
+    second: Cat_jetpack_animation_yellow_3
+  - first:
+      213: 3878640181533764934
+    second: Cat_jetpack_animation_yellow_4
+  - first:
+      213: 7884838836704904162
+    second: Cat_jetpack_animation_yellow_5
+  - first:
+      213: 932248115019549345
+    second: Cat_jetpack_animation_yellow_6
+  - first:
+      213: 8562766836392336237
+    second: Cat_jetpack_animation_yellow_7
+  - first:
+      213: -1799306340970558072
+    second: Cat_jetpack_animation_yellow_8
+  - first:
+      213: -1267795440691384478
+    second: Cat_jetpack_animation_yellow_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +62,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -41,7 +71,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -87,7 +117,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Cat_jetpack_animation_yellow_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 36
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc52ab8fe330c8d20800000000000000
+      internalID: 3282001797442053580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_jetpack_animation_yellow_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 36
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30177047b23ba55b0800000000000000
+      internalID: -5378789805729025789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_jetpack_animation_yellow_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 35
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b94c287d21cd9560800000000000000
+      internalID: 7322220970208151986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_jetpack_animation_yellow_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 36
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86834018f301e00c0800000000000000
+      internalID: -4607727503819917208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_jetpack_animation_yellow_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 35
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d60e7f1b2b3d530800000000000000
+      internalID: 3878640181533764934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_jetpack_animation_yellow_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e3000575239c6d60800000000000000
+      internalID: 7884838836704904162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_jetpack_animation_yellow_6
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aa844aa8b200fc00800000000000000
+      internalID: 932248115019549345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_jetpack_animation_yellow_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b19a9f11f05d670800000000000000
+      internalID: 8562766836392336237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_jetpack_animation_yellow_8
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d87508a649707e0800000000000000
+      internalID: -1799306340970558072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_jetpack_animation_yellow_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26feab583c2e76ee0800000000000000
+      internalID: -1267795440691384478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

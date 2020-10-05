@@ -72,6 +72,7 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
         {
             _initialSpriteSizeStep = 0;
             playerBody.GetComponent<Player>().ShowSpeechBubble("Hm.. The gravity is low already. \nLet's try the jetpack :)", 10.0F);
+            playerBody.GetComponent<Player>().SwitchAnimations(1);  // Switch to Jetpack
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && playerBody.GetComponent<Player>().isGrounded)
