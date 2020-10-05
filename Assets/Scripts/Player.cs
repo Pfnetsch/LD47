@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
 
         _sprite = transform.Find("Sprite");
         _rocketSprite = transform.Find("RocketSprite");
-        _uiCanvas = transform.Find("UICanvas");
+        _uiCanvas = transform.Find("UICameraCanvas");
 
         if (Variables.Application.Get<bool>("laserTransition"))
         {
@@ -143,8 +143,18 @@ public class Player : MonoBehaviour
     {
         Transform speechBubble = _uiCanvas.Find("SpeechBubble");
         speechBubble.gameObject.SetActive(true);
-        TextMeshPro textTMP = speechBubble.GetComponentInChildren<TextMeshPro>();
+        TextMeshProUGUI textTMP = speechBubble.GetComponentInChildren<TextMeshProUGUI>();
         textTMP.text = text;
+
+        StartCoroutine(WaitForSecondsBeforeClosingSpeechBubble(3.0F));
+    }
+
+    private IEnumerator WaitForSecondsBeforeClosingSpeechBubble(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+
+        Transform speechBubble = _uiCanvas.Find("SpeechBubble");
+        speechBubble.gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
