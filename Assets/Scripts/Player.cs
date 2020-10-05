@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     public bool isButtonPressed { get { return _isButtonPressed; } }
     public bool isAtLocation { get { return _isAtLocation; } }
     public bool isAtRocket { get { return _isAtRocket; } }
+    public bool hasJetPack { get { return _hasJetpack; } }
 
     public bool IsPlayerVisible
     { 
@@ -47,10 +49,12 @@ public class Player : MonoBehaviour
     private bool _isButtonPressed = false;
     private bool _isAtLocation = false;
     private bool _isAtRocket = false;
-    private bool _lasterTransitionStarted = false;
     private bool _hasJetpack = false;
+    private bool _lasterTransitionStarted = false;
     private bool _speechBubbleActive = false;
 
+    private string _secondSpeechBubble;
+    private float _secondSpeechBubbleDuration;
 
     private Animator _animator;
     private Transform _laserTrans;
@@ -194,14 +198,33 @@ public class Player : MonoBehaviour
 
             StartCoroutine(WaitForSecondsBeforeClosingSpeechBubble(durationInSec));
         }
+        else
+        {
+            _secondSpeechBubble = text;
+            _secondSpeechBubbleDuration = durationInSec;
+        }
     }
 
     private IEnumerator WaitForSecondsBeforeClosingSpeechBubble(float seconds)
     {
         yield return new WaitForSeconds(seconds);
 
-        _speechBubble.gameObject.SetActive(false);
         _speechBubbleActive = false;
+        _speechBubble.gameObject.SetActive(false);
+
+        if (!string.IsNullOrEmpty(_secondSpeechBubble))
+        {
+            ShowSpeechBubble(_secondSpeechBubble, _secondSpeechBubbleDuration);
+            _secondSpeechBubble = string.Empty;
+        } 
+    }
+
+    public IEnumerator TransitToNextPlanet()
+    {
+        yield return new WaitForSeconds(2.0F);
+
+        GlobalInformation.currentScene++;
+        SceneManager.LoadScene("Transition", LoadSceneMode.Single);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
