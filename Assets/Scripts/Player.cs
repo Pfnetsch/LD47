@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public bool isButtonPressed { get { return _isButtonPressed; } }
     public bool isAtLocation { get { return _isAtLocation; } }
     public bool isAtRocket { get { return _isAtRocket; } }
+    public bool hasJetPack { get { return _hasJetpack; } }
 
     public bool IsPlayerVisible
     { 
@@ -48,8 +49,8 @@ public class Player : MonoBehaviour
     private bool _isButtonPressed = false;
     private bool _isAtLocation = false;
     private bool _isAtRocket = false;
-    private bool _lasterTransitionStarted = false;
     private bool _hasJetpack = false;
+    private bool _lasterTransitionStarted = false;
     private bool _speechBubbleActive = false;
 
 

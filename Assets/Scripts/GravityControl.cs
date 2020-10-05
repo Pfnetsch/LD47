@@ -29,7 +29,7 @@ public class GravityControl : MonoBehaviour
         Vector3 direction = (planetPos - playerPos).normalized;
         Vector2 newGravityDirection = new Vector2(direction.x, direction.y);
 
-        if (!Player.GetComponent<Player>().isUnderWater)
+        if (!Player.GetComponent<Player>().isUnderWater && !Player.GetComponent<Player>().hasJetPack)
         {
             var charRotation = Quaternion.LookRotation(direction, Vector3.forward);
             charRotation.x = 0f;
