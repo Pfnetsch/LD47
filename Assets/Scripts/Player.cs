@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
 
     public List<AnimatorOverrideController> animationControllersMoveJump;
     public List<AnimatorOverrideController> animationControllersMoveJetpack;
-    public UnityEditor.Animations.AnimatorController animationControllerSwim;
+    public RuntimeAnimatorController animationControllerSwim;
 
     private bool _isPlayerVisible = true;
     private bool _isRocketVisible = false;
@@ -228,7 +228,18 @@ public class Player : MonoBehaviour
                 if (_distancePlayerMovedAway > 50F)
                 {
                     transform.Find("Blackout").gameObject.SetActive(false);
+
+                    if (_distancePlayerMovedAway > 100F)
+                    {
+                        GetComponentInChildren<Camera>().orthographicSize = 20;
+                    }
                 }
+            }
+
+            if (isAtLocation)   // Black Hole reached
+            {
+                GlobalInformation.currentScene = 1;
+                SceneManager.LoadScene("Game", LoadSceneMode.Single);
             }
         }
     }
@@ -238,6 +249,9 @@ public class Player : MonoBehaviour
         if (!_speechBubbleActive)
         {
             _speechBubbleActive = true;
+
+            Transform uiCanvas = transform.Find("UICameraCanvas");
+            _speechBubble = uiCanvas.Find("SpeechBubble");
 
             _speechBubble.gameObject.SetActive(true);
             TextMeshProUGUI textTMP = _speechBubble.GetComponentInChildren<TextMeshProUGUI>();

@@ -17,6 +17,8 @@ public class PlayerMercuryMovement : MonoBehaviour, IPlayerPlanetMovement
 
     private float timeOnGround = 0;
 
+    private bool wasGrounded = false;
+
     public void PlayerSetup(GameObject rootGameObject)
     {
         rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
@@ -33,6 +35,7 @@ public class PlayerMercuryMovement : MonoBehaviour, IPlayerPlanetMovement
 
         if (isGrounded)
         {
+            wasGrounded = true;
             timeOnGround++;
         }
         else
@@ -103,15 +106,8 @@ public class PlayerMercuryMovement : MonoBehaviour, IPlayerPlanetMovement
         {
             _playerBody.gravityScale = 1 - (float)Math.Pow(_movementSpeed,2) / 6000F;
         }
-
-        //if (_movementSpeed > 1000)
-        //{
-        //    movingToNextPlanet = true;
-        //}
-
-        Debug.Log(Vector3.Distance(_playerBody.transform.position, gameObject.transform.position));
-        
-        if (Vector3.Distance(_playerBody.transform.position, gameObject.transform.position) > 35f)
+  
+        if (wasGrounded && Vector3.Distance(_playerBody.transform.position, gameObject.transform.position) > 35f)
         {
             // lift off
             GlobalInformation.currentScene++;
