@@ -37,12 +37,23 @@ public class Player : MonoBehaviour
         }
     }
 
+    public bool IsSatelliteVisible
+    {
+        get => _isSatelliteVisible;
+        set
+        {
+            _isSatelliteVisible = value;
+            _satelliteSprite.gameObject.SetActive(_isSatelliteVisible);
+        }
+    }
+
     public List<AnimatorOverrideController> animationControllersMoveJump;
     public List<AnimatorOverrideController> animationControllersMoveJetpack;
     public UnityEditor.Animations.AnimatorController animationControllerSwim;
 
     private bool _isPlayerVisible = true;
     private bool _isRocketVisible = false;
+    private bool _isSatelliteVisible = false;
 
     private bool _isGrounded = false;
     private bool _isUnderWater = false;
@@ -50,11 +61,12 @@ public class Player : MonoBehaviour
     private bool _isAtLocation = false;
     private bool _isAtRocket = false;
     private bool _hasJetpack = false;
-    private bool _lasterTransitionStarted = false;
+    private bool _laserTransitionStarted = false;
     private bool _speechBubbleActive = false;
 
     private string _secondSpeechBubble;
     private float _secondSpeechBubbleDuration;
+    private float _distancePlayerMovedAway = 0F;
 
     private Animator _animator;
     private Transform _laserTrans;
@@ -63,6 +75,7 @@ public class Player : MonoBehaviour
 
     private Transform _sprite;
     private Transform _rocketSprite;
+    private Transform _satelliteSprite;
     private Transform _speechBubble;
 
     // Start is called before the first frame update
@@ -77,6 +90,8 @@ public class Player : MonoBehaviour
 
         _sprite = transform.Find("Sprite");
         _rocketSprite = transform.Find("RocketSprite");
+        _satelliteSprite = transform.Find("SatelliteSprite");
+
         Transform uiCanvas = transform.Find("UICameraCanvas");
         _speechBubble = uiCanvas.Find("SpeechBubble");
 
@@ -106,6 +121,14 @@ public class Player : MonoBehaviour
             _animator.runtimeAnimatorController = animationControllersMoveJetpack[GlobalInformation.CharacterSkinIndex];
             _hasJetpack = true;
         }
+    }
+
+    public void SatelliteGrabPlayerAndMoveToNextPlanet()
+    {
+        Variables.Application.Set("inTransition", true);
+
+        _satelliteSprite.Translate(20F, 0, 0);
+        IsSatelliteVisible = true;
     }
 
     // Update is called once per frame
@@ -173,14 +196,33 @@ public class Player : MonoBehaviour
 
             if (Variables.Application.Get<bool>("laserTransition"))
             {
-                if (!_lasterTransitionStarted)
+                if (!_laserTransitionStarted)
                 {
                     _laserTrans.gameObject.SetActive(true);
-                    _lasterTransitionStarted = true;
+                    _laserTransitionStarted = true;
                 }
-                else if (_lasterTransitionStarted)
+                else if (_laserTransitionStarted)
                 {
                     _zopfnTrans.position = Vector3.MoveTowards(_zopfnTrans.position, _zopfnTarget.position, 8F * Time.deltaTime);
+                }
+            }
+        }
+
+        if (IsSatelliteVisible)
+        {
+            if (_satelliteSprite.localPosition.x > 0.807F)
+            {
+                _satelliteSprite.transform.Translate(-7F * Time.deltaTime, 0, 0);
+            }
+            else
+            {
+                transform.Translate(13F * Time.deltaTime, 0, 0);
+                _distancePlayerMovedAway *= 13F * Time.deltaTime;
+
+                if (_distancePlayerMovedAway > 20F)
+                {
+                    GlobalInformation.currentScene++;
+                    SceneManager.LoadScene("Transition", LoadSceneMode.Single);
                 }
             }
         }

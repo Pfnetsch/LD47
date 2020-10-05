@@ -676,6 +676,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UranusPlanet
       objectReference: {fileID: 0}
+    - target: {fileID: 4453882429829376674, guid: e4fc1e658d2f23a4f9e78c3294cd49d9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4453882429829376675, guid: e4fc1e658d2f23a4f9e78c3294cd49d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1037,6 +1041,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlutoPlanet
       objectReference: {fileID: 0}
+    - target: {fileID: 8462427039679099887, guid: 009ca13eae9645043810d0033e6cc68e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462427039912645493, guid: 009ca13eae9645043810d0033e6cc68e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 57edd418dab214140b3f422f96ca01d8, type: 3}
+    - target: {fileID: 8462427039912645493, guid: 009ca13eae9645043810d0033e6cc68e, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462427039912645493, guid: 009ca13eae9645043810d0033e6cc68e, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462427039912645493, guid: 009ca13eae9645043810d0033e6cc68e, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 009ca13eae9645043810d0033e6cc68e, type: 3}
 --- !u!1001 &8943619888847046664
@@ -1049,6 +1073,10 @@ PrefabInstance:
     - target: {fileID: 8943619888121072225, guid: e46b3da4d392faa478a7a3aada30b791, type: 3}
       propertyPath: m_Name
       value: NeptunePlanet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943619888121072225, guid: e46b3da4d392faa478a7a3aada30b791, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8943619888121072226, guid: e46b3da4d392faa478a7a3aada30b791, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1093,6 +1121,22 @@ PrefabInstance:
     - target: {fileID: 8943619888121072226, guid: e46b3da4d392faa478a7a3aada30b791, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943619888292707247, guid: e46b3da4d392faa478a7a3aada30b791, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8a8df6ea6c66b0489f1f91c5f2757bc, type: 3}
+    - target: {fileID: 8943619888292707247, guid: e46b3da4d392faa478a7a3aada30b791, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943619888292707247, guid: e46b3da4d392faa478a7a3aada30b791, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943619888292707247, guid: e46b3da4d392faa478a7a3aada30b791, type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e46b3da4d392faa478a7a3aada30b791, type: 3}
