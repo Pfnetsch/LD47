@@ -221,12 +221,11 @@ public class Player : MonoBehaviour
             else
             {
                 transform.Translate(13F * Time.deltaTime, 0, 0);
-                _distancePlayerMovedAway *= 13F * Time.deltaTime;
+                _distancePlayerMovedAway += 13F * Time.deltaTime;
 
-                if (_distancePlayerMovedAway > 20F)
+                if (_distancePlayerMovedAway > 30F)
                 {
-                    GlobalInformation.currentScene++;
-                    SceneManager.LoadScene("Transition", LoadSceneMode.Single);
+                    transform.Find("Blackout").gameObject.SetActive(false);
                 }
             }
         }
