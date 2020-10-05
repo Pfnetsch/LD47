@@ -1,6 +1,7 @@
 ﻿using Bolt;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -54,6 +55,8 @@ public class Player : MonoBehaviour
 
     private Transform _sprite;
     private Transform _rocketSprite;
+    private Transform _uiCanvas;
+
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +70,7 @@ public class Player : MonoBehaviour
 
         _sprite = transform.Find("Sprite");
         _rocketSprite = transform.Find("RocketSprite");
+        _uiCanvas = transform.Find("UICanvas");
 
         if (Variables.Application.Get<bool>("laserTransition"))
         {
@@ -133,6 +137,14 @@ public class Player : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void ShowSpeechBubble(string text)
+    {
+        Transform speechBubble = _uiCanvas.Find("SpeechBubble");
+        speechBubble.gameObject.SetActive(true);
+        TextMeshPro textTMP = speechBubble.GetComponentInChildren<TextMeshPro>();
+        textTMP.text = text;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
