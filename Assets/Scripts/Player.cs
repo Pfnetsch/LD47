@@ -116,14 +116,16 @@ public class Player : MonoBehaviour
     /// </summary>
     public void SwitchAnimations(int animIndex)
     {
+        _animator = GetComponentInChildren<Animator>();
+
         if (animIndex == 0)
         {
             _animator.runtimeAnimatorController = animationControllersMoveJump[GlobalInformation.CharacterSkinIndex];
         }
         else if (animIndex == 1)
         {
-            _animator.runtimeAnimatorController = animationControllersMoveJetpack[GlobalInformation.CharacterSkinIndex];
             _hasJetpack = true;
+            _animator.runtimeAnimatorController = animationControllersMoveJetpack[GlobalInformation.CharacterSkinIndex];
         }
     }
 
