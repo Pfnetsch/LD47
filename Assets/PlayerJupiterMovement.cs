@@ -41,9 +41,12 @@ public class PlayerJupiterMovement : MonoBehaviour, IPlayerPlanetMovement
 
     public void PlayerUpdate(Rigidbody2D _playerBody)
     {
-        float platformMoveDiff = _movementSpeed * -2F * Time.deltaTime;
-        _lengthPlatformsMoved += platformMoveDiff;
-        _platforms.Translate(platformMoveDiff, 0, 0);
+        float moveDiff = _movementSpeed * -1F * Time.deltaTime;
+
+        _lengthPlatformsMoved += moveDiff;
+
+        _playerBody.transform.Translate(-moveDiff, 0, 0);
+        _platforms.Translate(moveDiff * 2, 0, 0);   // Platforms are faster
 
         if (_lengthPlatformsMoved < -142F)
         {
@@ -60,15 +63,19 @@ public class PlayerJupiterMovement : MonoBehaviour, IPlayerPlanetMovement
         {
             _playerBody.transform.Translate(0, _movementSpeed * -1F * Time.deltaTime, 0);
         }
-
-        // Left / Right Movement is slower for Balancing
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            _playerBody.transform.Translate(_movementSpeed * -0.5F * Time.deltaTime, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            _playerBody.transform.Translate(_movementSpeed * 0.5F * Time.deltaTime, 0, 0);
-        }
+     
+        //// Left / Right Movement is slower for Balancing
+        //if (Input.GetKey(KeyCode.LeftArrow))
+        //{
+        //    moveDiff = _movementSpeed * -0.5F * Time.deltaTime;
+        //    _playerBody.transform.Translate(moveDiff, 0, 0);
+        //    _lengthPlatformsMoved -= moveDiff;
+        //}
+        //if (Input.GetKey(KeyCode.RightArrow))
+        //{
+        //    moveDiff = _movementSpeed * 0.5F * Time.deltaTime;
+        //    _playerBody.transform.Translate(moveDiff, 0, 0);
+        //    _lengthPlatformsMoved -= moveDiff;
+        //}
     }
 }
