@@ -672,6 +672,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2113735721}
     m_Modifications:
+    - target: {fileID: 91912325, guid: e4fc1e658d2f23a4f9e78c3294cd49d9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 743091632, guid: e4fc1e658d2f23a4f9e78c3294cd49d9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 826944627, guid: e4fc1e658d2f23a4f9e78c3294cd49d9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1144217926, guid: e4fc1e658d2f23a4f9e78c3294cd49d9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809717270, guid: e4fc1e658d2f23a4f9e78c3294cd49d9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839428850, guid: e4fc1e658d2f23a4f9e78c3294cd49d9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4453882429829376674, guid: e4fc1e658d2f23a4f9e78c3294cd49d9, type: 3}
       propertyPath: m_Name
       value: UranusPlanet

@@ -92,6 +92,10 @@ public class Player : MonoBehaviour
         _rocketSprite = transform.Find("RocketSprite");
         _satelliteSprite = transform.Find("SatelliteSprite");
 
+        MeshRenderer blackOut = transform.Find("Blackout").GetComponent<MeshRenderer>();
+        blackOut.sortingLayerName = "Default";
+        blackOut.sortingOrder = 2;
+
         Transform uiCanvas = transform.Find("UICameraCanvas");
         _speechBubble = uiCanvas.Find("SpeechBubble");
 

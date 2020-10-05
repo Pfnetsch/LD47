@@ -21,6 +21,7 @@ public class PlayerUranusMovement : MonoBehaviour, IPlayerPlanetMovement
 
         rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 10;
         rootGameObject.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
+        rootGameObject.GetComponent<Player>().SwitchAnimations(1);
         rootGameObject.transform.Find("Blackout").gameObject.SetActive(true);
 
         _directionSigns = transform.Find("DirectionSigns");
