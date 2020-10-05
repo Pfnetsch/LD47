@@ -36,16 +36,20 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
         _dustRenderer = rootGameObject.transform.Find("Sprite").GetComponent<SpriteRenderer>();
         _dustTransform = rootGameObject.transform.Find("DustAnimation");
         _dustTransform.gameObject.SetActive(true);
+
+        rootGameObject.GetComponent<Player>().ShowSpeechBubble("Oh no i made a crash landing on mars.\nMaybe I should have used more duct tape ...", 5.0F);
+        rootGameObject.GetComponent<Player>().ShowSpeechBubble("Only a pair of ancient \"highheels\" and\na jetpack survived the landing.\nI should definitly test those fancy shoes first!", 5.0F);
     }
 
     public void PlayerUpdate(Rigidbody2D playerBody)
     {
         //Debug.Log("Mars Movement");
-        Vector3 scaleChange = new Vector3(_initialSpriteSizeStep / _marsSpriteTransform.localScale.x, _initialSpriteSizeStep / _marsSpriteTransform.localScale.y, 0) * Time.deltaTime;
 
         // move and degrade
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            Vector3 scaleChange = new Vector3(_initialSpriteSizeStep / _marsSpriteTransform.localScale.x, _initialSpriteSizeStep / _marsSpriteTransform.localScale.y, 0) * Time.deltaTime;
+
             if (_initialSpriteSizeStep != 0)
             {
                 _dustTransform.GetComponent<Animator>().SetInteger("Index", 1);
@@ -56,6 +60,8 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
+            Vector3 scaleChange = new Vector3(_initialSpriteSizeStep / _marsSpriteTransform.localScale.x, _initialSpriteSizeStep / _marsSpriteTransform.localScale.y, 0) * Time.deltaTime;
+
             if (_initialSpriteSizeStep != 0)
             {
                 _dustTransform.GetComponent<Animator>().SetInteger("Index", 2);
@@ -80,7 +86,7 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
         if (_initialSpriteSizeStep != 0 && _marsSpriteTransform.localScale.x < 0.5F)
         {
             _initialSpriteSizeStep = 0;
-            playerBody.GetComponent<Player>().ShowSpeechBubble("Hm.. The gravity is low already. \nLet's try the jetpack :)", 10.0F);
+            playerBody.GetComponent<Player>().ShowSpeechBubble("Hm, that's unfortunate, I liked Mars.\nBut now the gravity should be low enought to use the jetpack!", 10.0F);
             playerBody.GetComponent<Player>().SwitchAnimations(1);  // Switch to Jetpack
         }
 

@@ -14,7 +14,7 @@ public class PlayerSaturnMovement : MonoBehaviour, IPlayerPlanetMovement
         rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 10;
         rootGameObject.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
 
-        rootGameObject.GetComponent<Player>().ShowSpeechBubble("My Jetpack is dry, \nI need to find some fuel!", 4.0F);
+        rootGameObject.GetComponent<Player>().ShowSpeechBubble("My Jetpack is dry, \nI need to find some fuel!", 5.0F);
     }
     
     

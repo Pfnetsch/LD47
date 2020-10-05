@@ -12,6 +12,9 @@ public class PlayerVenusMovement : MonoBehaviour, IPlayerPlanetMovement
     {
         rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 5;
         rootGameObject.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
+
+        rootGameObject.GetComponent<Player>().ShowSpeechBubble("Did the sun just get bigger???", 5.0F);
+        rootGameObject.GetComponent<Player>().ShowSpeechBubble("Ooh, that's why it is so warm suddenly. I should hurry up a bit.", 5.0F);
     }
 
     private int _movingToNextPlanet = 0;
