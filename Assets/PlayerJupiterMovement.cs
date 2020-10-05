@@ -11,6 +11,7 @@ public class PlayerJupiterMovement : MonoBehaviour, IPlayerPlanetMovement
     private Transform _platforms;
 
     private bool _targetReached = false;
+    private bool _transitStarted = false;
 
     private float _distancePlatformsMoved = 15; // Inital Space
     private int _indexPlatFormToReset = 0;
@@ -72,6 +73,7 @@ public class PlayerJupiterMovement : MonoBehaviour, IPlayerPlanetMovement
             {
                 _targetReached = true;
                 _sideScroller.gameObject.SetActive(false);
+                _playerBody.GetComponent<Player>().SwitchAnimations(1);
             }
         }
         else
@@ -83,9 +85,10 @@ public class PlayerJupiterMovement : MonoBehaviour, IPlayerPlanetMovement
             {
                 _playerBody.transform.Translate(_movementSpeed * 3F * Time.deltaTime, 0, 0);
 
-                if (_distancePlayerMovedAway > 7)
+                if (!_transitStarted && _distancePlayerMovedAway > 7)
                 {
-                    _playerBody.GetComponent<Player>().TransitToNextPlanet();
+                    _transitStarted = true;
+                    StartCoroutine(_playerBody.GetComponent<Player>().TransitToNextPlanet());
                 }
             }
         }

@@ -16,6 +16,7 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
     private Transform _marsSpriteTransform;
 
     private float _initialSpriteSizeStep;
+    private bool _transitStarted = false;
 
     private void Start()
     {
@@ -68,10 +69,11 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
             _dustTransform.GetComponent<Animator>().SetInteger("Index", 0); // No dust Animation
         }
 
-        if (_initialSpriteSizeStep == 0 && Input.GetKeyDown(KeyCode.Space))
+        if (!_transitStarted && _initialSpriteSizeStep == 0 && Input.GetKeyDown(KeyCode.Space))
         {
             playerBody.AddRelativeForce(new Vector2(0.0F, 2F), ForceMode2D.Force);
 
+            _transitStarted = true;
             StartCoroutine(playerBody.GetComponent<Player>().TransitToNextPlanet());
         }
 

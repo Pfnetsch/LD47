@@ -11,6 +11,7 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
     private bool _isTeleportComplete = false;
     private bool _isRocketSpawned = false;
     private bool _isFlyingInRocket = false;
+    private bool _transitStarted = false;
 
     SpriteRenderer _spriteRenderer;
     Transform _teleportTransform;
@@ -128,12 +129,13 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
                 }
             }
         }
-        else
+        else if (!_transitStarted)
         {
             // Flying in Rocket
             playerBody.gravityScale = 0;
             playerBody.AddRelativeForce(new Vector2(0F, 2F), ForceMode2D.Force);
 
+            _transitStarted = true;
             StartCoroutine(playerBody.GetComponent<Player>().TransitToNextPlanet());
         }
     }

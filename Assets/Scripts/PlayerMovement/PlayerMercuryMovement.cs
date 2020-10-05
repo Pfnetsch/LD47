@@ -113,8 +113,7 @@ public class PlayerMercuryMovement : MonoBehaviour, IPlayerPlanetMovement
             // lift off
             GlobalInformation.currentScene++;
             SceneManager.LoadScene("Transition", LoadSceneMode.Single);
-        }
-        
+        }    
     }
     
     private void ResetMovementSpeed(int movementDirection)
