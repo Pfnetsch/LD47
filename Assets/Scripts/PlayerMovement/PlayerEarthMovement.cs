@@ -122,7 +122,9 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
                     _BaikonurRocket.gameObject.SetActive(false);
 
                     _isFlyingInRocket = true;
-                    playerBody.GetComponent<Player>().IsInRocket = true;
+                    playerBody.GetComponent<Player>().IsRocketVisible = true;
+                    playerBody.GetComponent<Player>().IsPlayerVisible = false;
+                    Variables.Application.Set("inRocket", true);
                 }
             }
         }
@@ -132,8 +134,15 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
             playerBody.gravityScale = 0;
             playerBody.AddRelativeForce(new Vector2(0F, 2F), ForceMode2D.Force);
 
-            GlobalInformation.currentScene++;
-            SceneManager.LoadScene("Transition", LoadSceneMode.Single);
+            StartCoroutine(TransitToMars());
         }
+    }
+
+    private IEnumerator TransitToMars()
+    {
+        yield return new WaitForSeconds(2.0F);
+
+        GlobalInformation.currentScene++;
+        SceneManager.LoadScene("Transition", LoadSceneMode.Single);
     }
 }
