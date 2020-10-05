@@ -1,7 +1,67 @@
 fileFormatVersion: 2
 guid: 07093026e608a9e438509069cdfae0d4
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4775886628022794378
+    second: Schwarzes Loch_0
+  - first:
+      213: -9184943762999154377
+    second: Schwarzes Loch_1
+  - first:
+      213: -243588072996101287
+    second: Schwarzes Loch_2
+  - first:
+      213: -3200844609941297562
+    second: Schwarzes Loch_3
+  - first:
+      213: -3017962266855346528
+    second: Schwarzes Loch_4
+  - first:
+      213: 6860724613051058838
+    second: Schwarzes Loch_5
+  - first:
+      213: -6433445542610101762
+    second: Schwarzes Loch_6
+  - first:
+      213: 1743976697749756458
+    second: Schwarzes Loch_7
+  - first:
+      213: 6284315499380449238
+    second: Schwarzes Loch_8
+  - first:
+      213: -8164047039740353940
+    second: Schwarzes Loch_9
+  - first:
+      213: -391055202268137214
+    second: Schwarzes Loch_10
+  - first:
+      213: 725577648860890423
+    second: Schwarzes Loch_11
+  - first:
+      213: 1201420508192561785
+    second: Schwarzes Loch_12
+  - first:
+      213: 8400825119211960082
+    second: Schwarzes Loch_13
+  - first:
+      213: 5818050453255547991
+    second: Schwarzes Loch_14
+  - first:
+      213: -1970252328101074750
+    second: Schwarzes Loch_15
+  - first:
+      213: -5896467559982892020
+    second: Schwarzes Loch_16
+  - first:
+      213: -2605166829033987748
+    second: Schwarzes Loch_17
+  - first:
+      213: 9045540125857629730
+    second: Schwarzes Loch_18
+  - first:
+      213: 8782573409151085968
+    second: Schwarzes Loch_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +92,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -41,7 +101,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -66,7 +126,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -75,7 +147,217 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Schwarzes Loch_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8836de959b574240800000000000000
+      internalID: 4775886628022794378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schwarzes Loch_1
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 739ee7cbf46888080800000000000000
+      internalID: -9184943762999154377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schwarzes Loch_2
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 953ab8d20f99e9cf0800000000000000
+      internalID: -243588072996101287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schwarzes Loch_3
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666a93b39c05493d0800000000000000
+      internalID: -3200844609941297562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schwarzes Loch_4
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aeed82ee4b0e16d0800000000000000
+      internalID: -3017962266855346528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schwarzes Loch_5
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a00b69fa0363f50800000000000000
+      internalID: 6860724613051058838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schwarzes Loch_6
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef997e66d5fc7b6a0800000000000000
+      internalID: -6433445542610101762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schwarzes Loch_7
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2adeed0199d33810800000000000000
+      internalID: 1743976697749756458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schwarzes Loch_8
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df9d05a6af563750800000000000000
+      internalID: 6284315499380449238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schwarzes Loch_9
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6262bae87a73be80800000000000000
+      internalID: -8164047039740353940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

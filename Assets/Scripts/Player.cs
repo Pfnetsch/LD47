@@ -220,10 +220,12 @@ public class Player : MonoBehaviour
             }
             else
             {
-                transform.Translate(13F * Time.deltaTime, 0, 0);
+                //transform.Translate(13F * Time.deltaTime, 0, 0);
+                transform.position = Vector3.MoveTowards(transform.position, GameObject.Find("BlackHole").transform.position, 13F * Time.deltaTime);
+
                 _distancePlayerMovedAway += 13F * Time.deltaTime;
 
-                if (_distancePlayerMovedAway > 30F)
+                if (_distancePlayerMovedAway > 50F)
                 {
                     transform.Find("Blackout").gameObject.SetActive(false);
                 }

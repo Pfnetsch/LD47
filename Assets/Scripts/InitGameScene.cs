@@ -62,6 +62,8 @@ public class InitGameScene : MonoBehaviour
                 break;
             case 7:
                 planet7.SetActive(true);
+                planet8.SetActive(true);
+                planet9.SetActive(true);
                 initPlayer(planet7);
                 break;
             case 8:
