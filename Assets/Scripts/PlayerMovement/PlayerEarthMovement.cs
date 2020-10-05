@@ -116,6 +116,9 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
             if (_isRocketSpawned && playerBody.GetComponent<Player>().isAtRocket)
             {
                 playerBody.transform.position = _BaikonurRocket.position;
+                //playerBody.transform.Find("Sprite").gameObject.SetActive(false);
+                playerBody.transform.Find("RocketSprite").gameObject.SetActive(true);
+                _BaikonurRocket.gameObject.SetActive(false);
             }
         }
     }
