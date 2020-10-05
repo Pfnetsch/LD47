@@ -68,10 +68,10 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
             playerBody.AddRelativeForce(new Vector2(0.0F, 2F), ForceMode2D.Force);
         }
 
-        if (_marsSpriteTransform.localScale.x < 0.5F)
+        if (_initialSpriteSizeStep != 0 && _marsSpriteTransform.localScale.x < 0.5F)
         {
             _initialSpriteSizeStep = 0;
-            playerBody.GetComponent<Player>().ShowSpeechBubble("Hm.. The gravity is low already. \nLet's try the jetpack :)");
+            playerBody.GetComponent<Player>().ShowSpeechBubble("Hm.. The gravity is low already. \nLet's try the jetpack :)", 5.0F);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && playerBody.GetComponent<Player>().isGrounded)

@@ -167,7 +167,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void ShowSpeechBubble(string text)
+    public void ShowSpeechBubble(string text, float durationInSec)
     {
         if (!_speechBubbleActive)
         {
@@ -178,7 +178,7 @@ public class Player : MonoBehaviour
             TextMeshProUGUI textTMP = speechBubble.GetComponentInChildren<TextMeshProUGUI>();
             textTMP.text = text;       
 
-            StartCoroutine(WaitForSecondsBeforeClosingSpeechBubble(3.0F));
+            StartCoroutine(WaitForSecondsBeforeClosingSpeechBubble(durationInSec));
         }
     }
 
