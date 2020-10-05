@@ -20,6 +20,8 @@ public class PlayerUranusMovement : MonoBehaviour, IPlayerPlanetMovement
         rootGameObject.transform.Find("Blackout").gameObject.SetActive(true);
 
         _directionSigns = transform.Find("DirectionSigns");
+
+        rootGameObject.GetComponent<Player>().ShowSpeechBubble("Huh, where am I? Quite dark here ...", 5.0F);
     }
     
     public void TurnDirectionSignToProbe()
