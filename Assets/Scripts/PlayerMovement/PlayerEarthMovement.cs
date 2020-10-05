@@ -9,6 +9,7 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
     private float _movementSpeed = 0.1F;
     private bool _isTeleportComplete = false;
     private bool _isRocketSpawned = false;
+    private bool _isFlyingInRocket = false;
 
     SpriteRenderer _spriteRenderer;
     Transform _teleportTransform;
@@ -46,79 +47,83 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
     public void PlayerUpdate(Rigidbody2D playerBody)
     {
         //Debug.Log("Earth Movement");
-
-        if (!_isTeleportComplete)
+        if (!_isFlyingInRocket)
         {
-            float animationPercentage = _teleportTransform.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime;
-            if (animationPercentage < 1)
+            if (!_isTeleportComplete)
             {
-                _spriteRenderer.color += new Color(0, 0, 0, 0.3F * Time.deltaTime);
-            }
-            else
-            {
-                _isTeleportComplete = true;
-                _teleportTransform.gameObject.SetActive(false);
-                _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 1F);   // Invisible at the beginning
-            }
-        }
-        else
-        {
-            if (playerBody.GetComponent<Player>().isUnderWater)
-            {
-                if (Input.GetKey(KeyCode.LeftArrow))
+                float animationPercentage = _teleportTransform.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime;
+                if (animationPercentage < 1)
                 {
-                    playerBody.transform.Rotate(new Vector3(0F, 0F, 0.2F));
+                    _spriteRenderer.color += new Color(0, 0, 0, 0.3F * Time.deltaTime);
                 }
-                if (Input.GetKey(KeyCode.RightArrow))
+                else
                 {
-                    playerBody.transform.Rotate(new Vector3(0F, 0F, -0.2F));
-                }
-                if (Input.GetKey(KeyCode.UpArrow))
-                {
-                    playerBody.AddRelativeForce(new Vector2(0.0F, 0.8F), ForceMode2D.Force);
-                }
-                if (Input.GetKey(KeyCode.DownArrow))
-                {
-                    playerBody.AddRelativeForce(new Vector2(0.0F, -0.8F), ForceMode2D.Force);
+                    _isTeleportComplete = true;
+                    _teleportTransform.gameObject.SetActive(false);
+                    _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, _spriteRenderer.color.b, 1F);   // Invisible at the beginning
                 }
             }
             else
             {
-                if (Input.GetKey(KeyCode.LeftArrow))
+                if (playerBody.GetComponent<Player>().isUnderWater)
                 {
-                    gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed * -1F);
+                    if (Input.GetKey(KeyCode.LeftArrow))
+                    {
+                        playerBody.transform.Rotate(new Vector3(0F, 0F, 0.2F));
+                    }
+                    if (Input.GetKey(KeyCode.RightArrow))
+                    {
+                        playerBody.transform.Rotate(new Vector3(0F, 0F, -0.2F));
+                    }
+                    if (Input.GetKey(KeyCode.UpArrow))
+                    {
+                        playerBody.AddRelativeForce(new Vector2(0.0F, 0.8F), ForceMode2D.Force);
+                    }
+                    if (Input.GetKey(KeyCode.DownArrow))
+                    {
+                        playerBody.AddRelativeForce(new Vector2(0.0F, -0.8F), ForceMode2D.Force);
+                    }
+                }
+                else
+                {
+                    if (Input.GetKey(KeyCode.LeftArrow))
+                    {
+                        gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed * -1F);
+                    }
+
+                    if (Input.GetKey(KeyCode.RightArrow))
+                    {
+                        gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed);
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.Space) && playerBody.GetComponent<Player>().isGrounded)
+                    {
+                        playerBody.AddRelativeForce(new Vector2(0.0F, 5.0F), ForceMode2D.Impulse);
+                    }
                 }
 
-                if (Input.GetKey(KeyCode.RightArrow))
+                if (!_isRocketSpawned && playerBody.GetComponent<Player>().isAtLocation)
                 {
-                    gameObject.transform.RotateAround(gameObject.transform.position, Vector3.forward, _movementSpeed);
-                }
+                    _BaikonurText.gameObject.SetActive(true);
 
-                if (Input.GetKeyDown(KeyCode.Space) && playerBody.GetComponent<Player>().isGrounded)
+                    if (GlobalInformation.currentCollectibles == 3)
+                    {
+                        _BaikonurRocket.gameObject.SetActive(true);
+                        _isRocketSpawned = true;
+                    }
+                }
+                else
+                    _BaikonurText.gameObject.SetActive(false);
+
+                if (_isRocketSpawned && playerBody.GetComponent<Player>().isAtRocket)
                 {
-                    playerBody.AddRelativeForce(new Vector2(0.0F, 5.0F), ForceMode2D.Impulse);
+                    playerBody.transform.position = _BaikonurRocket.position;
+                    //playerBody.transform.Find("Sprite").gameObject.SetActive(false);
+                    playerBody.transform.Find("RocketSprite").gameObject.SetActive(true);
+                    _BaikonurRocket.gameObject.SetActive(false);
+
+                    _isFlyingInRocket = true;
                 }
-            }
-
-            if (!_isRocketSpawned && playerBody.GetComponent<Player>().isAtLocation)
-            {
-                _BaikonurText.gameObject.SetActive(true);
-
-                if (GlobalInformation.currentCollectibles == 3)
-                {
-                    _BaikonurRocket.gameObject.SetActive(true);
-                    _isRocketSpawned = true;
-                }
-            }
-            else
-                _BaikonurText.gameObject.SetActive(false);
-
-            if (_isRocketSpawned && playerBody.GetComponent<Player>().isAtRocket)
-            {
-                playerBody.transform.position = _BaikonurRocket.position;
-                //playerBody.transform.Find("Sprite").gameObject.SetActive(false);
-                playerBody.transform.Find("RocketSprite").gameObject.SetActive(true);
-                _BaikonurRocket.gameObject.SetActive(false);
             }
         }
     }
