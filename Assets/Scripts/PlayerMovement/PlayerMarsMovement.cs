@@ -86,7 +86,7 @@ public class PlayerMarsMovement : MonoBehaviour, IPlayerPlanetMovement
         if (_initialSpriteSizeStep != 0 && _marsSpriteTransform.localScale.x < 0.5F)
         {
             _initialSpriteSizeStep = 0;
-            playerBody.GetComponent<Player>().ShowSpeechBubble("Hm.. The gravity is low already. \nLet's try the jetpack :)", 10.0F);
+            playerBody.GetComponent<Player>().ShowSpeechBubble("Hm, that's unfortunate, I liked Mars.\nBut now the gravity should be low enought to use the jetpack!", 10.0F);
             playerBody.GetComponent<Player>().SwitchAnimations(1);  // Switch to Jetpack
         }
 

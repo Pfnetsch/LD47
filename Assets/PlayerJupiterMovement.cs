@@ -41,6 +41,8 @@ public class PlayerJupiterMovement : MonoBehaviour, IPlayerPlanetMovement
         rootGameObject.GetComponentInChildren<Camera>().orthographicSize = 10;
         rootGameObject.GetComponent<Rigidbody2D>().gravityScale = 0.0F;
         rootGameObject.GetComponent<Player>().SwitchAnimations(1);
+
+        rootGameObject.GetComponent<Player>().ShowSpeechBubble("Soo many stones!\nI should pass by Jupiter really fast!", 5.0F);
     }
 
     public void PlayerUpdate(Rigidbody2D _playerBody)
