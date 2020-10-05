@@ -12,12 +12,13 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
     private bool _isRocketSpawned = false;
     private bool _isFlyingInRocket = false;
     private bool _transitStarted = false;
+    private bool _allItemsFound = false;
 
     SpriteRenderer _spriteRenderer;
     Transform _teleportTransform;
 
-    Transform _BaikonurRocket;
-    Transform _BaikonurText;
+    private Transform _BaikonurRocket;
+    private Transform _BaikonurText;
 
     public void PlayerSetup(GameObject rootGameObject)
     {
@@ -44,6 +45,8 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
         _teleportTransform.gameObject.SetActive(true);
 
         _teleportTransform.GetComponent<Animator>().SetTrigger("startTP");
+
+        rootGameObject.GetComponent<Player>().ShowSpeechBubble("I knew it was a good idea to jump on a big red button without a label!", 5.0F);
     }
 
     public void PlayerUpdate(Rigidbody2D playerBody)
@@ -104,11 +107,17 @@ public class PlayerEarthMovement : MonoBehaviour, IPlayerPlanetMovement
                     }
                 }
 
+                if (GlobalInformation.currentCollectibles == 3)
+                {
+                    _allItemsFound = true;
+                    playerBody.GetComponent<Player>().ShowSpeechBubble("Those pieces I found in the ocean seem to exactly form a rocket,\nhow convenient!", 5.0F);
+                }
+
                 if (!_isRocketSpawned && playerBody.GetComponent<Player>().isAtLocation)
                 {
                     _BaikonurText.gameObject.SetActive(true);
 
-                    if (GlobalInformation.currentCollectibles == 3)
+                    if (_allItemsFound)
                     {
                         _BaikonurRocket.gameObject.SetActive(true);
                         _isRocketSpawned = true;
